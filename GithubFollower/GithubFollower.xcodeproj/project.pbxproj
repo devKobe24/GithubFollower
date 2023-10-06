@@ -55,6 +55,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD029E0A2AD01671003D5FBD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				CD1F01B12ACBD97900AE88DA /* SearchViewController.swift */,
+				CD742FDC2ACE0F49005681AD /* FollowerListViewController.swift */,
+				CD1F01B32ACBD9B700AE88DA /* FavoriteListViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		CD029E0B2AD01682003D5FBD /* Sub */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sub;
+			sourceTree = "<group>";
+		};
 		CD1F01912ACBD1DF00AE88DA = {
 			isa = PBXGroup;
 			children = (
@@ -98,9 +115,8 @@
 		CD742FE12ACE29FD005681AD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				CD1F01B12ACBD97900AE88DA /* SearchViewController.swift */,
-				CD742FDC2ACE0F49005681AD /* FollowerListViewController.swift */,
-				CD1F01B32ACBD9B700AE88DA /* FavoriteListViewController.swift */,
+				CD029E0A2AD01671003D5FBD /* Core */,
+				CD029E0B2AD01682003D5FBD /* Sub */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
