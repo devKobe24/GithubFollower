@@ -17,6 +17,10 @@
 		CD1F01B82ACBDE9700AE88DA /* UITabBarController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F01B72ACBDE9700AE88DA /* UITabBarController+.swift */; };
 		CD1F01BA2ACBE7EF00AE88DA /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F01B92ACBE7EF00AE88DA /* GFButton.swift */; };
 		CD1F01BC2ACBE9C900AE88DA /* GFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F01BB2ACBE9C900AE88DA /* GFTextField.swift */; };
+		CD1F01BE2ACCE6F300AE88DA /* AssetImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F01BD2ACCE6F300AE88DA /* AssetImages.swift */; };
+		CD742FDD2ACE0F49005681AD /* FollowerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD742FDC2ACE0F49005681AD /* FollowerListViewController.swift */; };
+		CD742FDF2ACE1D9F005681AD /* UINavigationBar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD742FDE2ACE1D9F005681AD /* UINavigationBar+.swift */; };
+		CD742FE62ACE2C48005681AD /* GFTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD742FE52ACE2C48005681AD /* GFTitleLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		CD1F01B72ACBDE9700AE88DA /* UITabBarController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+.swift"; sourceTree = "<group>"; };
 		CD1F01B92ACBE7EF00AE88DA /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = "<group>"; };
 		CD1F01BB2ACBE9C900AE88DA /* GFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTextField.swift; sourceTree = "<group>"; };
+		CD1F01BD2ACCE6F300AE88DA /* AssetImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetImages.swift; sourceTree = "<group>"; };
+		CD742FDC2ACE0F49005681AD /* FollowerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListViewController.swift; sourceTree = "<group>"; };
+		CD742FDE2ACE1D9F005681AD /* UINavigationBar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+.swift"; sourceTree = "<group>"; };
+		CD742FE52ACE2C48005681AD /* GFTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTitleLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,19 +72,63 @@
 		CD1F019C2ACBD1DF00AE88DA /* GithubFollower */ = {
 			isa = PBXGroup;
 			children = (
-				CD1F019D2ACBD1DF00AE88DA /* AppDelegate.swift */,
-				CD1F019F2ACBD1DF00AE88DA /* SceneDelegate.swift */,
+				CD742FE42ACE2A38005681AD /* Applications */,
+				CD742FE32ACE2A29005681AD /* Model */,
+				CD742FE22ACE2A1A005681AD /* View */,
+				CD742FE12ACE29FD005681AD /* ViewController */,
+				CD742FE02ACE29E4005681AD /* Extensions */,
 				CD1F01A62ACBD1E000AE88DA /* Assets.xcassets */,
-				CD1F01A82ACBD1E000AE88DA /* LaunchScreen.storyboard */,
 				CD1F01AB2ACBD1E000AE88DA /* Info.plist */,
-				CD1F01B12ACBD97900AE88DA /* SearchViewController.swift */,
-				CD1F01B32ACBD9B700AE88DA /* FavoriteListViewController.swift */,
-				CD1F01B52ACBDBD300AE88DA /* UINavigationController+.swift */,
-				CD1F01B72ACBDE9700AE88DA /* UITabBarController+.swift */,
-				CD1F01B92ACBE7EF00AE88DA /* GFButton.swift */,
-				CD1F01BB2ACBE9C900AE88DA /* GFTextField.swift */,
 			);
 			path = GithubFollower;
+			sourceTree = "<group>";
+		};
+		CD742FE02ACE29E4005681AD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CD742FDE2ACE1D9F005681AD /* UINavigationBar+.swift */,
+				CD1F01B52ACBDBD300AE88DA /* UINavigationController+.swift */,
+				CD1F01B72ACBDE9700AE88DA /* UITabBarController+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CD742FE12ACE29FD005681AD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CD742FDC2ACE0F49005681AD /* FollowerListViewController.swift */,
+				CD1F01B12ACBD97900AE88DA /* SearchViewController.swift */,
+				CD1F01B32ACBD9B700AE88DA /* FavoriteListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CD742FE22ACE2A1A005681AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD1F01A82ACBD1E000AE88DA /* LaunchScreen.storyboard */,
+				CD1F01BB2ACBE9C900AE88DA /* GFTextField.swift */,
+				CD1F01B92ACBE7EF00AE88DA /* GFButton.swift */,
+				CD742FE52ACE2C48005681AD /* GFTitleLabel.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD742FE32ACE2A29005681AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD1F01BD2ACCE6F300AE88DA /* AssetImages.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD742FE42ACE2A38005681AD /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+				CD1F019F2ACBD1DF00AE88DA /* SceneDelegate.swift */,
+				CD1F019D2ACBD1DF00AE88DA /* AppDelegate.swift */,
+			);
+			path = Applications;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,10 +201,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD742FE62ACE2C48005681AD /* GFTitleLabel.swift in Sources */,
 				CD1F01B42ACBD9B700AE88DA /* FavoriteListViewController.swift in Sources */,
+				CD1F01BE2ACCE6F300AE88DA /* AssetImages.swift in Sources */,
 				CD1F01B62ACBDBD300AE88DA /* UINavigationController+.swift in Sources */,
 				CD1F01BC2ACBE9C900AE88DA /* GFTextField.swift in Sources */,
+				CD742FDD2ACE0F49005681AD /* FollowerListViewController.swift in Sources */,
 				CD1F01B22ACBD97900AE88DA /* SearchViewController.swift in Sources */,
+				CD742FDF2ACE1D9F005681AD /* UINavigationBar+.swift in Sources */,
 				CD1F01BA2ACBE7EF00AE88DA /* GFButton.swift in Sources */,
 				CD1F019E2ACBD1DF00AE88DA /* AppDelegate.swift in Sources */,
 				CD1F01A02ACBD1DF00AE88DA /* SceneDelegate.swift in Sources */,
@@ -226,7 +282,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -283,7 +339,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
