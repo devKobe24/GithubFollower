@@ -96,8 +96,8 @@
 		CD742FE12ACE29FD005681AD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				CD742FDC2ACE0F49005681AD /* FollowerListViewController.swift */,
 				CD1F01B12ACBD97900AE88DA /* SearchViewController.swift */,
+				CD742FDC2ACE0F49005681AD /* FollowerListViewController.swift */,
 				CD1F01B32ACBD9B700AE88DA /* FavoriteListViewController.swift */,
 			);
 			path = ViewController;
