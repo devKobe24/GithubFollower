@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD029E092AD01416003D5FBD /* GFBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD029E082AD01416003D5FBD /* GFBodyLabel.swift */; };
 		CD1F019E2ACBD1DF00AE88DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F019D2ACBD1DF00AE88DA /* AppDelegate.swift */; };
 		CD1F01A02ACBD1DF00AE88DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F019F2ACBD1DF00AE88DA /* SceneDelegate.swift */; };
 		CD1F01A72ACBD1E000AE88DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1F01A62ACBD1E000AE88DA /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD029E082AD01416003D5FBD /* GFBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFBodyLabel.swift; sourceTree = "<group>"; };
 		CD1F019A2ACBD1DF00AE88DA /* GithubFollower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubFollower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1F019D2ACBD1DF00AE88DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD1F019F2ACBD1DF00AE88DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				CD1F01BB2ACBE9C900AE88DA /* GFTextField.swift */,
 				CD1F01B92ACBE7EF00AE88DA /* GFButton.swift */,
 				CD742FE52ACE2C48005681AD /* GFTitleLabel.swift */,
+				CD029E082AD01416003D5FBD /* GFBodyLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD029E092AD01416003D5FBD /* GFBodyLabel.swift in Sources */,
 				CD742FE62ACE2C48005681AD /* GFTitleLabel.swift in Sources */,
 				CD1F01B42ACBD9B700AE88DA /* FavoriteListViewController.swift in Sources */,
 				CD1F01BE2ACCE6F300AE88DA /* AssetImages.swift in Sources */,
