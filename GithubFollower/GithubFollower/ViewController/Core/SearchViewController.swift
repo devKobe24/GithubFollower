@@ -107,8 +107,10 @@ extension SearchViewController {
     
     @objc private func pushFollowerListViewController() {
         guard isUsernameEmpty else {
-            Logger().debug("⛔️ Username is Empty")
-            print("No username")
+            presentGFAlertOnMainThread(alertTitle: "Empty Username",
+                                       message: "Please enter a username. We need to know who to look for 😀.",
+                                       buttonTitle: "OK")
+            Logger().debug("Empty Username")
             return
         }
         
