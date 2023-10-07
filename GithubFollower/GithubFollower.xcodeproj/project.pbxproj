@@ -25,6 +25,7 @@
 		CD1F01BA2ACBE7EF00AE88DA /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F01B92ACBE7EF00AE88DA /* GFButton.swift */; };
 		CD1F01BC2ACBE9C900AE88DA /* GFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F01BB2ACBE9C900AE88DA /* GFTextField.swift */; };
 		CD1F01BE2ACCE6F300AE88DA /* AssetImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F01BD2ACCE6F300AE88DA /* AssetImages.swift */; };
+		CD2D291F2AD1269500D7B09E /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2D291E2AD1269500D7B09E /* Follower.swift */; };
 		CD742FDD2ACE0F49005681AD /* FollowerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD742FDC2ACE0F49005681AD /* FollowerListViewController.swift */; };
 		CD742FDF2ACE1D9F005681AD /* UINavigationBar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD742FDE2ACE1D9F005681AD /* UINavigationBar+.swift */; };
 		CD742FE62ACE2C48005681AD /* GFTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD742FE52ACE2C48005681AD /* GFTitleLabel.swift */; };
@@ -51,6 +52,7 @@
 		CD1F01B92ACBE7EF00AE88DA /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = "<group>"; };
 		CD1F01BB2ACBE9C900AE88DA /* GFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTextField.swift; sourceTree = "<group>"; };
 		CD1F01BD2ACCE6F300AE88DA /* AssetImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetImages.swift; sourceTree = "<group>"; };
+		CD2D291E2AD1269500D7B09E /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		CD742FDC2ACE0F49005681AD /* FollowerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListViewController.swift; sourceTree = "<group>"; };
 		CD742FDE2ACE1D9F005681AD /* UINavigationBar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+.swift"; sourceTree = "<group>"; };
 		CD742FE52ACE2C48005681AD /* GFTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTitleLabel.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				CD029E162AD0BC43003D5FBD /* Enum */,
+				CD2D291E2AD1269500D7B09E /* Follower.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				CD1F01B22ACBD97900AE88DA /* SearchViewController.swift in Sources */,
 				CD742FDF2ACE1D9F005681AD /* UINavigationBar+.swift in Sources */,
 				CD1F01BA2ACBE7EF00AE88DA /* GFButton.swift in Sources */,
+				CD2D291F2AD1269500D7B09E /* Follower.swift in Sources */,
 				CD029E112AD0B6E5003D5FBD /* GFContainerView.swift in Sources */,
 				CD029E0D2AD01715003D5FBD /* GFAlertViewController.swift in Sources */,
 				CD029E132AD0B86A003D5FBD /* BorderColor.swift in Sources */,
