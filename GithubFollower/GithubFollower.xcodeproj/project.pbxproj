@@ -115,7 +115,7 @@
 		CD1F019C2ACBD1DF00AE88DA /* GithubFollower */ = {
 			isa = PBXGroup;
 			children = (
-				CD742FE42ACE2A38005681AD /* Applications */,
+				CD742FE42ACE2A38005681AD /* Support */,
 				CD742FE32ACE2A29005681AD /* Model */,
 				CD742FE22ACE2A1A005681AD /* View */,
 				CD742FE12ACE29FD005681AD /* ViewController */,
@@ -124,6 +124,18 @@
 				CD1F01AB2ACBD1E000AE88DA /* Info.plist */,
 			);
 			path = GithubFollower;
+			sourceTree = "<group>";
+		};
+		CD2D291D2AD11EA500D7B09E /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				CD1F01BB2ACBE9C900AE88DA /* GFTextField.swift */,
+				CD1F01B92ACBE7EF00AE88DA /* GFButton.swift */,
+				CD742FE52ACE2C48005681AD /* GFTitleLabel.swift */,
+				CD029E082AD01416003D5FBD /* GFBodyLabel.swift */,
+				CD029E102AD0B6E5003D5FBD /* GFContainerView.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		CD742FE02ACE29E4005681AD /* Extensions */ = {
@@ -149,12 +161,8 @@
 		CD742FE22ACE2A1A005681AD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CD2D291D2AD11EA500D7B09E /* CustomView */,
 				CD1F01A82ACBD1E000AE88DA /* LaunchScreen.storyboard */,
-				CD1F01BB2ACBE9C900AE88DA /* GFTextField.swift */,
-				CD1F01B92ACBE7EF00AE88DA /* GFButton.swift */,
-				CD742FE52ACE2C48005681AD /* GFTitleLabel.swift */,
-				CD029E082AD01416003D5FBD /* GFBodyLabel.swift */,
-				CD029E102AD0B6E5003D5FBD /* GFContainerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,13 +175,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		CD742FE42ACE2A38005681AD /* Applications */ = {
+		CD742FE42ACE2A38005681AD /* Support */ = {
 			isa = PBXGroup;
 			children = (
 				CD1F019F2ACBD1DF00AE88DA /* SceneDelegate.swift */,
 				CD1F019D2ACBD1DF00AE88DA /* AppDelegate.swift */,
 			);
-			path = Applications;
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
