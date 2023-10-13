@@ -32,7 +32,7 @@
 		CD742FE62ACE2C48005681AD /* GFTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD742FE52ACE2C48005681AD /* GFTitleLabel.swift */; };
 		CD8434812AD97982006502C0 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8434802AD97982006502C0 /* Components.swift */; };
 		CD8434832AD97BB7006502C0 /* QueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8434822AD97BB6006502C0 /* QueryItem.swift */; };
-		CD8434852AD9EFFC006502C0 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8434842AD9EFFC006502C0 /* ErrorMessage.swift */; };
+		CD8434852AD9EFFC006502C0 /* GFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8434842AD9EFFC006502C0 /* GFError.swift */; };
 		CDB3C8612AD2199C001D5D3D /* NetworkManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8602AD2199C001D5D3D /* NetworkManageable.swift */; };
 		CDB3C8632AD21A0D001D5D3D /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8622AD21A0D001D5D3D /* NetworkManagerProtocol.swift */; };
 		CDB3C8652AD225F0001D5D3D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8642AD225F0001D5D3D /* Endpoint.swift */; };
@@ -92,7 +92,7 @@
 		CD742FE52ACE2C48005681AD /* GFTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTitleLabel.swift; sourceTree = "<group>"; };
 		CD8434802AD97982006502C0 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		CD8434822AD97BB6006502C0 /* QueryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryItem.swift; sourceTree = "<group>"; };
-		CD8434842AD9EFFC006502C0 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		CD8434842AD9EFFC006502C0 /* GFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFError.swift; sourceTree = "<group>"; };
 		CDB3C8602AD2199C001D5D3D /* NetworkManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManageable.swift; sourceTree = "<group>"; };
 		CDB3C8622AD21A0D001D5D3D /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
 		CDB3C8642AD225F0001D5D3D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -329,7 +329,7 @@
 			children = (
 				CDB3C86E2AD23A45001D5D3D /* DecodeError.swift */,
 				CD029E142AD0BBC5003D5FBD /* AlertErrorMessage.swift */,
-				CD8434842AD9EFFC006502C0 /* ErrorMessage.swift */,
+				CD8434842AD9EFFC006502C0 /* GFError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -527,7 +527,7 @@
 				CD029E0F2AD0B48B003D5FBD /* BackgroundColor.swift in Sources */,
 				CD1F01B22ACBD97900AE88DA /* SearchViewController.swift in Sources */,
 				CDB3C86C2AD238EE001D5D3D /* JSONDecodeProtocol.swift in Sources */,
-				CD8434852AD9EFFC006502C0 /* ErrorMessage.swift in Sources */,
+				CD8434852AD9EFFC006502C0 /* GFError.swift in Sources */,
 				CD742FDF2ACE1D9F005681AD /* UINavigationBar+.swift in Sources */,
 				CD8434812AD97982006502C0 /* Components.swift in Sources */,
 				CD8434832AD97BB7006502C0 /* QueryItem.swift in Sources */,
