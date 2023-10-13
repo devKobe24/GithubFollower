@@ -15,11 +15,26 @@ final class FollowerListViewController: UIViewController {
         super.viewDidLoad()
         
         initialSetup()
+        
+        // MARK: - TEST
+        let networkManager = NetworkManagerProtocol()
+        networkManager.getFollower(for: "devKobe24", perPage: 1, page: 1) { (followerListData, errorMessage) in
+            guard let followerListData = followerListData else {
+                self.presentGFAlertOnMainThread(alertTitle: "BAD STUFF HAPPEN", message: errorMessage!, buttonTitle: "OK")
+                return
+            }
+            print("userData Followers => \(followerListData.count)")
+            print(followerListData)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
+        
+     
+        
+        
     }
     
     private func initialSetup() {
