@@ -12,7 +12,20 @@
 
   },
   "testTargets" : [
-
+    {
+      "target" : {
+        "containerPath" : "container:GithubFollower.xcodeproj",
+        "identifier" : "CDB3C8732AD23E48001D5D3D",
+        "name" : "GithubFollowerTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:GithubFollower.xcodeproj",
+        "identifier" : "CDFEC9162AD8FEF100981B4C",
+        "name" : "GFNetworkTests"
+      }
+    }
   ],
   "version" : 1
 }
