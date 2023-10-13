@@ -17,12 +17,12 @@ struct NetworkManagerProtocol: NetworkManageable {
     func getFollower(for username: String, perPage: Int, page: Int, completionHandler: @escaping ([Follower]?, String?) -> Void) {
         
         var components = URLComponents()
-        components.scheme = "https"
-        components.host = "api.github.com"
-        components.path = "/users/\(username)/followers"
+        components.scheme = Components.githubScheme.localized
+        components.host = Components.githubHost.localized
+        components.path = "/\(Components.githubUserPath.localized)/\(username)/\(Components.githubFollowersPath.localized)"
         
-        let perPage = URLQueryItem(name: "per_page", value: "\(perPage)")
-        let page = URLQueryItem(name: "page", value: "\(page)")
+        let perPage = URLQueryItem(name: QueryItem.perPage.name, value: "\(perPage)")
+        let page = URLQueryItem(name: QueryItem.page.name, value: "\(page)")
         
         components.queryItems = [
             perPage,
@@ -33,8 +33,6 @@ struct NetworkManagerProtocol: NetworkManageable {
             completionHandler(nil, "리퀘스트 URL 에러입니다.")
             return
         }
-        
-//        let requestURL = URLRequest(url: url)
         
         let dataTask = urlSession.dataTask(with: url) { (data, response, error) in
             guard error == nil else {
