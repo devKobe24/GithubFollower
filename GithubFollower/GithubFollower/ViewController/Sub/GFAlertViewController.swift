@@ -85,7 +85,7 @@ extension GFAlertViewController {
     
     private func configureTitleLabel() {
         containerView.addSubview(titleLabel)
-        titleLabel.text = alertTitle ?? ErrorMessage.alertTitle.localized
+        titleLabel.text = alertTitle ?? AlertErrorMessage.alertTitle.localized
         
         constraintsTitleLabelUI()
     }
@@ -103,7 +103,7 @@ extension GFAlertViewController {
     
     private func configureOkButton() {
         containerView.addSubview(okButton)
-        okButton.setTitle(buttonTitle ?? ErrorMessage.okButtonTitle.localized, for: .normal)
+        okButton.setTitle(buttonTitle ?? AlertErrorMessage.okButtonTitle.localized, for: .normal)
         okButton.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
         
         constrainsOkButtonUI()
@@ -126,7 +126,7 @@ extension GFAlertViewController {
     
     private func configureMessageLabel() {
         containerView.addSubview(messageLabel)
-        messageLabel.text = message ?? ErrorMessage.messageLabel.localized
+        messageLabel.text = message ?? AlertErrorMessage.messageLabel.localized
         messageLabel.numberOfLines = 4
         
         constraintsMessageLabelUI()
