@@ -15,7 +15,7 @@ struct NetworkManagerProtocol: NetworkManageable {
         self.urlSession = urlSession
     }
     
-    func getFollower(for username: String, perPage: Int, page: Int, completionHandler: @escaping ([Follower]?, ErrorMessage?) -> Void) {
+    func getFollower(for username: String, perPage: Int, page: Int, completionHandler: @escaping (Result<[Follower], GFError>) -> Void) {
         
         var components = URLComponents()
         components.scheme = Components.githubScheme.localized
@@ -31,18 +31,18 @@ struct NetworkManagerProtocol: NetworkManageable {
         ]
         
         guard let url = components.url else {
-            completionHandler(nil, ErrorMessage.invalidRequest)
+            completionHandler(.failure(.invalidRequest))
             return
         }
         
         let dataTask = urlSession.dataTask(with: url) { (data, response, error) in
             guard error == nil else {
-                completionHandler(nil, ErrorMessage.unableRequest)
+                completionHandler(.failure(.unableRequest))
                 return
             }
             
             guard let response = response as? HTTPURLResponse else {
-                completionHandler(nil, ErrorMessage.invalidServer)
+                completionHandler(.failure(.invalidServer))
                 return
             }
             
@@ -51,28 +51,28 @@ struct NetworkManagerProtocol: NetworkManageable {
             if #available(iOS 16.0, *) {
                 guard successRange.contains(response.statusCode) else {
                     Logger().error("\(response.statusCode) Error")
-                    completionHandler(nil, ErrorMessage.invalidResponse)
+                    completionHandler(.failure(.invalidResponse))
                     return
                 }
             } else {
                 guard successRange ~= response.statusCode else {
                     Logger().error("\(response.statusCode) Error")
-                    completionHandler(nil, ErrorMessage.invalidResponse)
+                    completionHandler(.failure(.invalidResponse))
                     return
                 }
             }
             
             guard let data = data else {
-                completionHandler(nil, ErrorMessage.invalidResponse)
+                completionHandler(.failure(.invalidResponse))
                 return
             }
             
             do {
                 let decoder = JSONDecodeProtocol()
                 let followerListData = try decoder.decodeJSON(type: [Follower].self, data: data)
-                completionHandler(followerListData, nil)
+                completionHandler(.success(followerListData))
             } catch {
-                completionHandler(nil, ErrorMessage.invalidServer)
+                completionHandler(.failure(.invalidServer))
             }
         }
         dataTask.resume()
