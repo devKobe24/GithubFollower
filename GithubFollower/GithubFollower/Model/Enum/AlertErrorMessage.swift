@@ -5,7 +5,7 @@
 //  Created by Minseong Kang on 2023/10/07.
 //
 
-enum ErrorMessage {
+enum AlertErrorMessage {
     case alertTitle
     case okButtonTitle
     case messageLabel
@@ -13,11 +13,11 @@ enum ErrorMessage {
     var localized: String {
         switch self {
         case .alertTitle:
-            return "Alert Title went wrong"
+            return "얼럿 타이틀이 잘못되었습니다."
         case .okButtonTitle:
-            return "Ok Button went wrong"
+            return "OK 버튼 타이틀이 잘못되었습니다."
         case .messageLabel:
-            return "Unable to complete request"
+            return "Request를 완료할 수 없습니다."
         }
     }
 }
