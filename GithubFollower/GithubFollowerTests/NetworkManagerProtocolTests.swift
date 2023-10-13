@@ -24,7 +24,6 @@ final class NetworkManagerProtocolTests: XCTestCase {
     // MARK: - reset
     func test_URL요청으로_MaryJo_github이라는값을받아올때() {
         // given
-        let promiseLogin = XCTestExpectation(description: "MaryJo-github")
         let expectation = XCTestExpectation(description: "MaryJo-github")
         
         let url = URL(string: "https://api.github.com/users/devKobe24/followers?per_page=1&page=1")!
