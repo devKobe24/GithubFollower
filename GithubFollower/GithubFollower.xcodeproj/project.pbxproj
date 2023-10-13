@@ -30,6 +30,8 @@
 		CD742FDD2ACE0F49005681AD /* FollowerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD742FDC2ACE0F49005681AD /* FollowerListViewController.swift */; };
 		CD742FDF2ACE1D9F005681AD /* UINavigationBar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD742FDE2ACE1D9F005681AD /* UINavigationBar+.swift */; };
 		CD742FE62ACE2C48005681AD /* GFTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD742FE52ACE2C48005681AD /* GFTitleLabel.swift */; };
+		CD8434812AD97982006502C0 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8434802AD97982006502C0 /* Components.swift */; };
+		CD8434832AD97BB7006502C0 /* QueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8434822AD97BB6006502C0 /* QueryItem.swift */; };
 		CDB3C8612AD2199C001D5D3D /* NetworkManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8602AD2199C001D5D3D /* NetworkManageable.swift */; };
 		CDB3C8632AD21A0D001D5D3D /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8622AD21A0D001D5D3D /* NetworkManagerProtocol.swift */; };
 		CDB3C8652AD225F0001D5D3D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8642AD225F0001D5D3D /* Endpoint.swift */; };
@@ -87,6 +89,8 @@
 		CD742FDC2ACE0F49005681AD /* FollowerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListViewController.swift; sourceTree = "<group>"; };
 		CD742FDE2ACE1D9F005681AD /* UINavigationBar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+.swift"; sourceTree = "<group>"; };
 		CD742FE52ACE2C48005681AD /* GFTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTitleLabel.swift; sourceTree = "<group>"; };
+		CD8434802AD97982006502C0 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		CD8434822AD97BB6006502C0 /* QueryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryItem.swift; sourceTree = "<group>"; };
 		CDB3C8602AD2199C001D5D3D /* NetworkManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManageable.swift; sourceTree = "<group>"; };
 		CDB3C8622AD21A0D001D5D3D /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
 		CDB3C8642AD225F0001D5D3D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 				CD029E142AD0BBC5003D5FBD /* ErrorMessage.swift */,
 				CD1F01BD2ACCE6F300AE88DA /* AssetImages.swift */,
 				CDB3C8642AD225F0001D5D3D /* Endpoint.swift */,
+				CD8434802AD97982006502C0 /* Components.swift */,
+				CD8434822AD97BB6006502C0 /* QueryItem.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -519,6 +525,8 @@
 				CD1F01B22ACBD97900AE88DA /* SearchViewController.swift in Sources */,
 				CDB3C86C2AD238EE001D5D3D /* JSONDecodeProtocol.swift in Sources */,
 				CD742FDF2ACE1D9F005681AD /* UINavigationBar+.swift in Sources */,
+				CD8434812AD97982006502C0 /* Components.swift in Sources */,
+				CD8434832AD97BB7006502C0 /* QueryItem.swift in Sources */,
 				CD1F01BA2ACBE7EF00AE88DA /* GFButton.swift in Sources */,
 				CDB3C8632AD21A0D001D5D3D /* NetworkManagerProtocol.swift in Sources */,
 				CD2D291F2AD1269500D7B09E /* Follower.swift in Sources */,
