@@ -5,4 +5,6 @@
 //  Created by Minseong Kang on 2023/10/08.
 //
 
-import Foundation
+protocol NetworkManageable {
+    func getFollower(for username: String, perPage: Int, page: Int, completionHandler: @escaping([Follower]?, String?) -> Void)
+}
