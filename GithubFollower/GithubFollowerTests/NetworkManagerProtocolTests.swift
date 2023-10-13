@@ -6,30 +6,44 @@
 //
 
 import XCTest
+@testable import GithubFollower
 
 final class NetworkManagerProtocolTests: XCTestCase {
-
+    var sut: NetworkManagerProtocol!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        try super.setUpWithError()
+        sut = NetworkManagerProtocol()
     }
-
+    
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        try super.tearDownWithError()
+        sut = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    // MARK: - reset
+    func test_URL요청으로_MaryJo_github이라는값을받아올때() {
+        // given
+        let promiseLogin = XCTestExpectation(description: "MaryJo-github")
+        let expectation = XCTestExpectation(description: "MaryJo-github")
+        
+        let url = URL(string: "https://api.github.com/users/devKobe24/followers?per_page=1&page=1")!
+        let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
+        let followerLoginData = "MaryJo-github".data(using: .utf8)
+        let dummyData = DummyData(data: followerLoginData, response: response, error: nil)
+        let stubUrlSession = StubURLSession(dummayData: dummyData)
+        
+        sut.urlSession = stubUrlSession
+        
+        // when
+        sut.getFollower(
+            for: "devKobe24",
+            perPage: 1,
+            page: 1) { (followers, errorMessage) in
+                // then
+                guard let followerLogin = followers?[0].login else { return }
+                let followerLoginData = XCTestExpectation(description: followerLogin)
+                XCTAssertEqual(followerLoginData, expectation)
+            }
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
