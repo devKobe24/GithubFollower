@@ -27,15 +27,18 @@ final class FollowerListViewController: UIViewController {
         initialSetup()
         
         // MARK: - TEST
-        let networkManager = NetworkManagerProtocol()
-        networkManager.getFollower(for: "devKobe24", perPage: 1, page: 1) { (followerListData, errorMessage) in
-            guard let followerListData = followerListData else {
-                self.presentGFAlertOnMainThread(alertTitle: "BAD STUFF HAPPEN", message: errorMessage!, buttonTitle: "OK")
-                return
+        networkManager.getFollower(
+            for: "devKobe24/asd",
+            perPage: 1,
+            page: 1) { result in
+                switch result {
+                case .success(let data):
+                    print(data[0].login)
+                    print(data[0].avatarUrl)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
             }
-            print("userData Followers => \(followerListData.count)")
-            print(followerListData)
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
