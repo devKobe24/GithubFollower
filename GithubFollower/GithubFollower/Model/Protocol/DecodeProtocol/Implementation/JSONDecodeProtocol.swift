@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+struct JSONDecodeProtocol: JSONDecodable {
+    func decodeJSON<Value>(type: Value.Type, data: Data) throws -> Value where Value : Decodable {
+        
+        let decoder = JSONDecoder()
+        
+        guard let decodedData: Value = try? decoder.decode(type, from: data) else {
+            throw DecodeError.failedDecode
+        }
+        
+        return decodedData
+    }
+}
