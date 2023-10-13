@@ -9,12 +9,12 @@ enum Endpoint {
     case base
     case user
     
-    var value: String {
+    var url: String {
         switch self {
         case .base:
             return "https://api.github.com"
         case .user:
-            return "https://api.github.com/user"
+            return "https://api.github.com/users/"
         }
     }
 }
