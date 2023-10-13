@@ -6,5 +6,5 @@
 //
 
 protocol NetworkManageable {
-    func getFollower(for username: String, perPage: Int, page: Int, completionHandler: @escaping([Follower]?, ErrorMessage?) -> Void)
+    func getFollower(for username: String, perPage: Int, page: Int, completionHandler: @escaping(Result<[Follower], GFError>) -> Void)
 }
