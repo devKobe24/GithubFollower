@@ -15,7 +15,7 @@ final class FollowerListViewController: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>?
     
     lazy var collectionView: UICollectionView = {
-        let flowLayout = configureFlowLayout()
+        let flowLayout = UICollectionViewFlowLayout().configureFlowLayout(in: view)
         
         var collectionView = UICollectionView(
             frame: self.view.bounds,
@@ -66,44 +66,21 @@ extension FollowerListViewController {
     private func configureCollectionView() {
         view.addSubview(collectionView)
     }
-    
-    private func configureFlowLayout() -> UICollectionViewFlowLayout {
-        let widthOfView: CGFloat = view.bounds.width
-        let padding: CGFloat = 12
-        let minimumItemSpacing: CGFloat = 10
-        let availableWidth: CGFloat = widthOfView - (padding * 2) - (minimumItemSpacing * 2)
-        let itemWidth: CGFloat = availableWidth / 3
-        let itemHeight: CGFloat = itemWidth + 40
-        
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.sectionInset = UIEdgeInsets(
-            top: padding,
-            left: padding,
-            bottom: padding,
-            right: padding
-        )
-        flowLayout.itemSize = CGSize(
-            width: itemWidth,
-            height: itemHeight
-        )
-        
-        return flowLayout
-    }
-    
+
     private func getFollower() {
         // MARK: - TEST
         networkManager.getFollower(
             username: username,
             perPage: 100,
             page: 1
-        ) { result in
+        ) { [weak self] result in
             switch result {
             case .success(let followers):
-                self.followers = followers
-                self.updateData()
+                self?.followers = followers
+                self?.updateData()
                 
             case .failure(let error):
-                self.presentGFAlertOnMainThread(
+                self?.presentGFAlertOnMainThread(
                     alertTitle: "Bad Stuff Happend",
                     message: error.localizedDescription,
                     buttonTitle: "OK"
