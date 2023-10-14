@@ -9,11 +9,12 @@ import UIKit
 
 final class FollowerListViewController: UIViewController {
     
-    var username: String!
+    var username: String
     let networkManager: NetworkManagerProtocol
     
-    init(networkManager: NetworkManagerProtocol) {
+    init(networkManager: NetworkManagerProtocol, username: String) {
         self.networkManager = networkManager
+        self.username = username
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -28,15 +29,18 @@ final class FollowerListViewController: UIViewController {
         
         // MARK: - TEST
         networkManager.getFollower(
-            for: "devKobe24/asd",
-            perPage: 1,
+            username: username,
+            perPage: 100,
             page: 1) { result in
                 switch result {
-                case .success(let data):
-                    print(data[0].login)
-                    print(data[0].avatarUrl)
+                case .success(let followers):
+                    print(followers)
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    self.presentGFAlertOnMainThread(
+                        alertTitle: "Bad Stuff Happend",
+                        message: error.localizedDescription,
+                        buttonTitle: "OK"
+                    )
                 }
             }
     }
