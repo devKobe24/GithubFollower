@@ -8,23 +8,17 @@
 import UIKit
 
 final class FollowerCell: UICollectionViewCell, Reusable {
-    let placeHolderImage: UIImage
-    
-    lazy var avatarImageView: GFAvatarImageView = {
-        var avatarImageView = GFAvatarImageView(placeHolderImage: placeHolderImage)
-        
-        return avatarImageView
-    }()
+    var avatarImageView: GFAvatarImageView = GFAvatarImageView(frame: .zero)
     
     let usernameLabel: GFTitleLabel = GFTitleLabel(
         textAlignment: .center,
         fontSize: 16
     )
     
-    init(placeHolderImage: UIImage) {
-        self.placeHolderImage = placeHolderImage
-        super.init(frame: .zero)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
+        setupAvatarImageView()
         configureAvatarImageView()
         configureUsernameLabel()
     }
@@ -41,10 +35,17 @@ extension FollowerCell {
 }
 
 extension FollowerCell {
+    private func setupAvatarImageView() {
+        guard let placeHolderImage = UIImage(named: "avatar-placeholder") else { 
+            return
+        }
+        self.avatarImageView.set(placeHolderImage: placeHolderImage)
+    }
+    
     private func configureAvatarImageView() {
         let padding: CGFloat = 8
         
-        addSubview(avatarImageView)
+        contentView.addSubview(avatarImageView)
         
         NSLayoutConstraint.activate([
             avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
@@ -55,13 +56,12 @@ extension FollowerCell {
     }
     
     private func configureUsernameLabel() {
-        let padding: CGFloat = 8
-        
-        addSubview(usernameLabel)
+        contentView.addSubview(usernameLabel)
         
         NSLayoutConstraint.activate([
             usernameLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 12),
             usernameLabel.widthAnchor.constraint(equalTo: avatarImageView.widthAnchor, multiplier: 1),
+            usernameLabel.centerXAnchor.constraint(equalTo: avatarImageView.centerXAnchor)
         ])
     }
 }
