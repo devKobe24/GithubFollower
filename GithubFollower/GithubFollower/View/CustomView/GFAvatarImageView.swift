@@ -9,11 +9,8 @@ import UIKit
 
 final class GFAvatarImageView: UIImageView {
     
-    let placeHolderImage: UIImage
-    
-    init(placeHolderImage: UIImage) {
-        self.placeHolderImage = placeHolderImage
-        super.init(frame: .zero)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         configure()
     }
@@ -22,10 +19,14 @@ final class GFAvatarImageView: UIImageView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func set(placeHolderImage: UIImage) {
+        image = placeHolderImage
+    }
+    
     private func configure() {
         layer.cornerRadius = 10
         clipsToBounds = true
-        image = self.placeHolderImage
+        contentMode = .scaleAspectFit
         translatesAutoresizingMaskIntoConstraints = false
     }
 }
