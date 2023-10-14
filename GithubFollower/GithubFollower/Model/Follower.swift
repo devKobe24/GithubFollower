@@ -5,7 +5,10 @@
 //  Created by Minseong Kang on 2023/10/07.
 //
 
-struct Follower: Decodable {
+import Foundation
+
+struct Follower: Decodable, Hashable {
+    var uuid: UUID = UUID()
     var login: String
     var avatarUrl: String
     
