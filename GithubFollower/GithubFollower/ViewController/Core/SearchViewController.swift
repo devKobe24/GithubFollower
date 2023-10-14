@@ -123,10 +123,9 @@ extension SearchViewController {
             Logger().debug("Empty Username")
             return
         }
-        
-        let followerListViewController = FollowerListViewController(networkManager: self.networkManager)
-        followerListViewController.username = usernameTextField.text
-        followerListViewController.title = usernameTextField.text
+        guard let username = usernameTextField.text else { return }
+        let followerListViewController = FollowerListViewController(networkManager: self.networkManager, username: username)
+        followerListViewController.title = username
         navigationController?.pushViewController(followerListViewController, animated: true)
     }
     
