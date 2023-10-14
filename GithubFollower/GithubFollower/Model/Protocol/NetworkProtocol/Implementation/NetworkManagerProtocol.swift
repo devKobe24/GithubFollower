@@ -15,7 +15,7 @@ struct NetworkManagerProtocol: NetworkManageable {
         self.urlSession = urlSession
     }
     
-    func getFollower(for username: String, perPage: Int, page: Int, completionHandler: @escaping (Result<[Follower], GFError>) -> Void) {
+    func getFollower(username: String, perPage: Int, page: Int, completionHandler: @escaping (Result<[Follower], GFError>) -> Void) {
         
         var components = URLComponents()
         components.scheme = Components.githubScheme.localized
