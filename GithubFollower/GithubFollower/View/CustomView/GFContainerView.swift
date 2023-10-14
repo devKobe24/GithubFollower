@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GFContainerView: UIView {
+final class GFContainerView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
