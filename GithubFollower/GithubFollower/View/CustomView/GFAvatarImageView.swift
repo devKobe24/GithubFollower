@@ -18,13 +18,6 @@ final class GFAvatarImageView: UIImageView {
         configure()
     }
     
-    override init(frame: CGRect) {
-        self.placeHolderImage =  UIImage(systemName: "person.slash.fill") ?? UIImage()
-        super.init(frame: frame)
-        
-        configure()
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
