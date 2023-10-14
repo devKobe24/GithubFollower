@@ -18,6 +18,7 @@
 		CD029E132AD0B86A003D5FBD /* BorderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD029E122AD0B86A003D5FBD /* BorderColor.swift */; };
 		CD029E152AD0BBC5003D5FBD /* AlertErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD029E142AD0BBC5003D5FBD /* AlertErrorMessage.swift */; };
 		CD029E182AD0C485003D5FBD /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD029E172AD0C485003D5FBD /* UIViewController+.swift */; };
+		CD1C829D2ADAA9A500F6DB50 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C829C2ADAA9A500F6DB50 /* Section.swift */; };
 		CD1F019E2ACBD1DF00AE88DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F019D2ACBD1DF00AE88DA /* AppDelegate.swift */; };
 		CD1F01A02ACBD1DF00AE88DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F019F2ACBD1DF00AE88DA /* SceneDelegate.swift */; };
 		CD1F01A72ACBD1E000AE88DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1F01A62ACBD1E000AE88DA /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 		CD029E122AD0B86A003D5FBD /* BorderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderColor.swift; sourceTree = "<group>"; };
 		CD029E142AD0BBC5003D5FBD /* AlertErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlertErrorMessage.swift; path = ../Enum/AlertErrorMessage.swift; sourceTree = "<group>"; };
 		CD029E172AD0C485003D5FBD /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		CD1C829C2ADAA9A500F6DB50 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		CD1F019A2ACBD1DF00AE88DA /* GithubFollower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubFollower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1F019D2ACBD1DF00AE88DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD1F019F2ACBD1DF00AE88DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				CDB3C8642AD225F0001D5D3D /* Endpoint.swift */,
 				CD8434802AD97982006502C0 /* Components.swift */,
 				CD8434822AD97BB6006502C0 /* QueryItem.swift */,
+				CD1C829C2ADAA9A500F6DB50 /* Section.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				CD029E0D2AD01715003D5FBD /* GFAlertViewController.swift in Sources */,
 				CDB3C86F2AD23A45001D5D3D /* DecodeError.swift in Sources */,
 				221EB7C62ADA247D005044AF /* Reusable+.swift in Sources */,
+				CD1C829D2ADAA9A500F6DB50 /* Section.swift in Sources */,
 				CD029E132AD0B86A003D5FBD /* BorderColor.swift in Sources */,
 				CD1F019E2ACBD1DF00AE88DA /* AppDelegate.swift in Sources */,
 				CDB3C88E2AD28AB4001D5D3D /* StubURLSession.swift in Sources */,
