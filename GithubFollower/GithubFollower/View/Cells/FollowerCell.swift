@@ -7,6 +7,6 @@
 
 import UIKit
 
-class FollowerCell: UICollectionViewCell {
+class FollowerCell: UICollectionViewCell, Reusable {
     
 }
