@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221EB7C02ADA2390005044AF /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221EB7BF2ADA2390005044AF /* FollowerCell.swift */; };
+		221EB7C42ADA245D005044AF /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221EB7C32ADA245D005044AF /* Reusable.swift */; };
+		221EB7C62ADA247D005044AF /* Reusable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221EB7C52ADA247D005044AF /* Reusable+.swift */; };
 		CD029E092AD01416003D5FBD /* GFBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD029E082AD01416003D5FBD /* GFBodyLabel.swift */; };
 		CD029E0D2AD01715003D5FBD /* GFAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD029E0C2AD01715003D5FBD /* GFAlertViewController.swift */; };
 		CD029E0F2AD0B48B003D5FBD /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD029E0E2AD0B48B003D5FBD /* BackgroundColor.swift */; };
@@ -65,6 +68,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		221EB7BF2ADA2390005044AF /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
+		221EB7C32ADA245D005044AF /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		221EB7C52ADA247D005044AF /* Reusable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reusable+.swift"; sourceTree = "<group>"; };
 		CD029E082AD01416003D5FBD /* GFBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFBodyLabel.swift; sourceTree = "<group>"; };
 		CD029E0C2AD01715003D5FBD /* GFAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertViewController.swift; sourceTree = "<group>"; };
 		CD029E0E2AD0B48B003D5FBD /* BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColor.swift; sourceTree = "<group>"; };
@@ -135,6 +141,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		221EB7BE2ADA22F1005044AF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				221EB7BF2ADA2390005044AF /* FollowerCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		221EB7C12ADA242B005044AF /* ReusableProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				221EB7C22ADA2442005044AF /* Interface */,
+			);
+			path = ReusableProtocol;
+			sourceTree = "<group>";
+		};
+		221EB7C22ADA2442005044AF /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				221EB7C32ADA245D005044AF /* Reusable.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
 		CD029E0A2AD01671003D5FBD /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +246,7 @@
 		CD5A65F82AD2180300CFC77E /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				221EB7C12ADA242B005044AF /* ReusableProtocol */,
 				CDB3C8852AD2856F001D5D3D /* URLSessionProtocol */,
 				CDB3C8662AD23668001D5D3D /* DecodeProtocol */,
 				CD5A65F92AD2180F00CFC77E /* NetworkProtocol */,
@@ -256,6 +287,7 @@
 				CD1F01B72ACBDE9700AE88DA /* UITabBarController+.swift */,
 				CD029E172AD0C485003D5FBD /* UIViewController+.swift */,
 				CDB3C88C2AD289B1001D5D3D /* URLSession+.swift */,
+				221EB7C52ADA247D005044AF /* Reusable+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -272,6 +304,7 @@
 		CD742FE22ACE2A1A005681AD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				221EB7BE2ADA22F1005044AF /* Cells */,
 				CD2D291D2AD11EA500D7B09E /* CustomView */,
 				CD1F01A82ACBD1E000AE88DA /* LaunchScreen.storyboard */,
 			);
@@ -521,6 +554,7 @@
 				CDB3C8612AD2199C001D5D3D /* NetworkManageable.swift in Sources */,
 				CD1F01BE2ACCE6F300AE88DA /* AssetImages.swift in Sources */,
 				CDB3C8892AD28631001D5D3D /* URLSessionable.swift in Sources */,
+				221EB7C02ADA2390005044AF /* FollowerCell.swift in Sources */,
 				CD1F01B62ACBDBD300AE88DA /* UINavigationController+.swift in Sources */,
 				CD1F01BC2ACBE9C900AE88DA /* GFTextField.swift in Sources */,
 				CD742FDD2ACE0F49005681AD /* FollowerListViewController.swift in Sources */,
@@ -537,6 +571,7 @@
 				CD029E112AD0B6E5003D5FBD /* GFContainerView.swift in Sources */,
 				CD029E0D2AD01715003D5FBD /* GFAlertViewController.swift in Sources */,
 				CDB3C86F2AD23A45001D5D3D /* DecodeError.swift in Sources */,
+				221EB7C62ADA247D005044AF /* Reusable+.swift in Sources */,
 				CD029E132AD0B86A003D5FBD /* BorderColor.swift in Sources */,
 				CD1F019E2ACBD1DF00AE88DA /* AppDelegate.swift in Sources */,
 				CDB3C88E2AD28AB4001D5D3D /* StubURLSession.swift in Sources */,
@@ -547,6 +582,7 @@
 				CDB3C88D2AD289B1001D5D3D /* URLSession+.swift in Sources */,
 				CD2D29212AD127E500D7B09E /* User.swift in Sources */,
 				CDB3C8652AD225F0001D5D3D /* Endpoint.swift in Sources */,
+				221EB7C42ADA245D005044AF /* Reusable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
