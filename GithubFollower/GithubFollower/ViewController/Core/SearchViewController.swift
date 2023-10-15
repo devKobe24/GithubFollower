@@ -9,7 +9,7 @@ import UIKit
 import OSLog
 
 final class SearchViewController: UIViewController {
-    let networkManager: NetworkManagerProtocol
+    let networkManager: NetworkManager
     
     let logoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -47,7 +47,7 @@ final class SearchViewController: UIViewController {
         }
     }
     
-    init(networkManager: NetworkManagerProtocol) {
+    init(networkManager: NetworkManager) {
         self.networkManager = networkManager
         super.init(nibName: nil, bundle: nil)
     }
