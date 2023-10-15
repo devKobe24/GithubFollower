@@ -8,7 +8,7 @@
 import Foundation
 import OSLog
 
-struct NetworkManagerProtocol: NetworkManageable {
+struct NetworkManager: NetworkManageable {
     var urlSession: URLSessionable
     
     init(urlSession: URLSessionable = URLSession.shared) {

@@ -9,11 +9,11 @@ import XCTest
 @testable import GithubFollower
 
 final class GFNetworkTests: XCTestCase {
-    var sut: NetworkManagerProtocol!
+    var sut: NetworkManager!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
-        sut = NetworkManagerProtocol()
+        sut = NetworkManager()
     }
 
     override func tearDownWithError() throws {
