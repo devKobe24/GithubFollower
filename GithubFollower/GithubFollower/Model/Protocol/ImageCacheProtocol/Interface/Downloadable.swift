@@ -5,4 +5,8 @@
 //  Created by Minseong Kang on 10/15/23.
 //
 
-import Foundation
+import UIKit
+
+protocol Downloadable {
+    func downloadImage(from urlString: String, completionHandler: @escaping (Result<UIImage, GFError>) -> Void)
+}
