@@ -19,4 +19,33 @@ extension UIViewController {
             self.present(alertViewController, animated: true)
         }
     }
+    
+    func showLoadingView() -> UIView {
+        let containerView = UIView(frame: view.bounds)
+        view.addSubview(containerView)
+        
+        containerView.backgroundColor = .systemBackground
+        containerView.alpha = 0
+        
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        containerView.addSubview(activityIndicator)
+        
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+        
+        activityIndicator.startAnimating()
+        containerView.alpha = 0.8
+        
+        return containerView
+    }
+    
+    func dismissLoadingView(containerView: UIView) {
+        DispatchQueue.main.async {
+            containerView.removeFromSuperview()
+        }
+    }
 }
