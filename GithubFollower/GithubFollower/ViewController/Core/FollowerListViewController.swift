@@ -71,12 +71,13 @@ extension FollowerListViewController {
     }
 
     private func getFollower(username: String, page: Int) {
-        // MARK: - TEST
+        let containerView = showLoadingView()
         networkManager.getFollower(
             username: username,
             perPage: 100,
             page: page
         ) { [weak self] result in
+            self?.dismissLoadingView(containerView: containerView)
             switch result {
             case .success(let followers):
                 if followers.count < 100 {
