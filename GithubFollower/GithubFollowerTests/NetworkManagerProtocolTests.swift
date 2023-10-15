@@ -9,11 +9,11 @@ import XCTest
 @testable import GithubFollower
 
 final class NetworkManagerProtocolTests: XCTestCase {
-    var sut: NetworkManagerProtocol!
+    var sut: NetworkManager!
     
     override func setUpWithError() throws {
         try super.setUpWithError()
-        sut = NetworkManagerProtocol()
+        sut = NetworkManager()
     }
     
     override func tearDownWithError() throws {
@@ -36,13 +36,19 @@ final class NetworkManagerProtocolTests: XCTestCase {
         
         // when
         sut.getFollower(
-            for: "devKobe24",
+            username: "devKobe24",
             perPage: 1,
-            page: 1) { (followers, errorMessage) in
+            page: 1) { result in
                 // then
-                guard let followerLogin = followers?[0].login else { return }
-                let followerLoginData = XCTestExpectation(description: followerLogin)
-                XCTAssertEqual(followerLoginData, expectation)
+                switch result {
+                case .success(let followers):
+                    let followerLogin = followers[0].login
+                    let followerLoginData = XCTestExpectation(description: followerLogin)
+                    XCTAssertEqual(followerLoginData, expectation)
+                case .failure(let error):
+                    let errorMessage = XCTestExpectation(description: error.localizedDescription)
+                    XCTAssertEqual(errorMessage, expectation)
+                }
             }
     }
 }
