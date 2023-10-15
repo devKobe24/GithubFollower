@@ -31,6 +31,7 @@ final class FollowerCell: UICollectionViewCell, Reusable {
 extension FollowerCell {
     func setup(follower: Follower) {
         usernameLabel.text = follower.login
+        avatarImageView.downloadImage(from: follower.avatarUrl)
     }
 }
 

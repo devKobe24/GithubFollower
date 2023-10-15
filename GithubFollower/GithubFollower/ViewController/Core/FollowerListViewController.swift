@@ -11,7 +11,7 @@ final class FollowerListViewController: UIViewController {
     
     var username: String
     var followers: [Follower] = []
-    let networkManager: NetworkManagerProtocol
+    let networkManager: NetworkManager
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>?
     
     lazy var collectionView: UICollectionView = {
@@ -30,7 +30,7 @@ final class FollowerListViewController: UIViewController {
         return collectionView
     }()
     
-    init(networkManager: NetworkManagerProtocol, username: String) {
+    init(networkManager: NetworkManager, username: String) {
         self.networkManager = networkManager
         self.username = username
         super.init(nibName: nil, bundle: nil)

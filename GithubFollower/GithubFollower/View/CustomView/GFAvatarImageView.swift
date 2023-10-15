@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import OSLog
 
 final class GFAvatarImageView: UIImageView {
+    let downloadImageManager: DownloadImageManager = DownloadImageManager()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,6 +23,19 @@ final class GFAvatarImageView: UIImageView {
     
     func set(placeHolderImage: UIImage) {
         image = placeHolderImage
+    }
+    
+    func downloadImage(from urlString: String) {
+        downloadImageManager.downloadImage(from: urlString) { [weak self] result in
+            switch result {
+            case .success(let downloadImage):
+                DispatchQueue.main.async {
+                    self?.image = downloadImage
+                }
+            case .failure(let error):
+                Logger().error("\(error.localizedDescription) 발생.")
+            }
+        }
     }
     
     private func configure() {
