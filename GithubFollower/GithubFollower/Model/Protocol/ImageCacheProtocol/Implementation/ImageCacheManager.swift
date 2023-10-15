@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ImageCacheManager {
+final class ImageCacheManager: ImageCacheable {
     static let shared = NSCache<NSString, UIImage>()
     
     private init() {}
