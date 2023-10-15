@@ -77,17 +77,27 @@ extension FollowerListViewController {
             perPage: 100,
             page: page
         ) { [weak self] result in
-            self?.dismissLoadingView(containerView: containerView)
+            guard let self = self else { return }
+            
+            self.dismissLoadingView(containerView: containerView)
             switch result {
             case .success(let followers):
                 if followers.count < 100 {
-                    self?.hasMoreFollowers = false
+                    self.hasMoreFollowers = false
                 }
-                self?.followers.append(contentsOf: followers)
-                self?.updateData()
+                self.followers.append(contentsOf: followers)
+                
+                if self.followers.isEmpty {
+                    let message = "이 유저는 팔로워가 없습니다.\n어서 팔로우 하세요 😉"
+                    DispatchQueue.main.async {
+                        self.showEmptyStateView(with: message, in: self.view)
+                    }
+                    return
+                }
+                self.updateData()
                 
             case .failure(let error):
-                self?.presentGFAlertOnMainThread(
+                self.presentGFAlertOnMainThread(
                     alertTitle: "Bad Stuff Happend",
                     message: error.localizedDescription,
                     buttonTitle: "OK"
