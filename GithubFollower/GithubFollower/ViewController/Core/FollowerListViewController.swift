@@ -13,6 +13,8 @@ final class FollowerListViewController: UIViewController {
     var followers: [Follower] = []
     let networkManager: NetworkManager
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>?
+    var page: Int = 1
+    var hasMoreFollowers: Bool = true
     
     lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout().configureFlowLayout(in: view)
@@ -45,7 +47,7 @@ final class FollowerListViewController: UIViewController {
         
         initialSetup()
         configureCollectionView()
-        getFollower()
+        getFollower(username: username, page: page)
         
         configureDataSource()
     }
@@ -65,18 +67,22 @@ extension FollowerListViewController {
     
     private func configureCollectionView() {
         view.addSubview(collectionView)
+        collectionView.delegate = self
     }
 
-    private func getFollower() {
+    private func getFollower(username: String, page: Int) {
         // MARK: - TEST
         networkManager.getFollower(
             username: username,
             perPage: 100,
-            page: 1
+            page: page
         ) { [weak self] result in
             switch result {
             case .success(let followers):
-                self?.followers = followers
+                if followers.count < 100 {
+                    self?.hasMoreFollowers = false
+                }
+                self?.followers.append(contentsOf: followers)
                 self?.updateData()
                 
             case .failure(let error):
@@ -116,5 +122,20 @@ extension FollowerListViewController {
             animatingDifferences: true,
             completion: nil
         )
+    }
+}
+
+extension FollowerListViewController: UICollectionViewDelegate {
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+        
+        if offsetY > contentHeight - height {
+            guard hasMoreFollowers else { return }
+            page += 1
+            getFollower(username: username, page: page)
+        }
     }
 }
