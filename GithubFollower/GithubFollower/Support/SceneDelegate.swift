@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         UINavigationBar().configureNavigationBarTintColor(tintColor: .systemGreen)
-        let rootNetworkManager: NetworkManagerProtocol = NetworkManagerProtocol()
+        let rootNetworkManager: NetworkManager = NetworkManager()
         let searchNavigationController = UINavigationController().createNavigationController(
             with: SearchViewController(networkManager: rootNetworkManager),
             title: "Search",
