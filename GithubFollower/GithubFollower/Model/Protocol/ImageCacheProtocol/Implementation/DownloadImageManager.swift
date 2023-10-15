@@ -12,6 +12,7 @@ struct DownloadImageManager: Downloadable {
     
     var urlSession: URLSessionable
     
+    
     init(urlSession: URLSessionable = URLSession.shared) {
         self.urlSession = urlSession
     }
@@ -51,11 +52,18 @@ struct DownloadImageManager: Downloadable {
                 return
             }
             
+            let cacheKey = NSString(string: urlString)
+            
+            if let cacheImage = ImageCacheManager.shared.object(forKey: cacheKey) {
+                completionHandler(.success(cacheImage))
+                return
+            }
+            
             guard let image = UIImage(data: data) else {
                 completionHandler(.failure(.invalidResponse))
                 return
             }
-            
+            ImageCacheManager.shared.setObject(image, forKey: cacheKey)
             completionHandler(.success(image))
         }
         
