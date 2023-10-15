@@ -23,6 +23,8 @@
 		CD1C82A42ADB645700F6DB50 /* Downloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C82A32ADB645700F6DB50 /* Downloadable.swift */; };
 		CD1C82A62ADB64E200F6DB50 /* DownloadImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C82A52ADB64E200F6DB50 /* DownloadImageManager.swift */; };
 		CD1C82A82ADB7CFC00F6DB50 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C82A72ADB7CFC00F6DB50 /* ImageCacheManager.swift */; };
+		CD1C82B12ADC870100F6DB50 /* GFEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C82B02ADC870100F6DB50 /* GFEmptyStateView.swift */; };
+		CD1C82B62ADC8AA700F6DB50 /* ImageCacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C82B52ADC8AA700F6DB50 /* ImageCacheable.swift */; };
 		CD1F019E2ACBD1DF00AE88DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F019D2ACBD1DF00AE88DA /* AppDelegate.swift */; };
 		CD1F01A02ACBD1DF00AE88DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F019F2ACBD1DF00AE88DA /* SceneDelegate.swift */; };
 		CD1F01A72ACBD1E000AE88DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD1F01A62ACBD1E000AE88DA /* Assets.xcassets */; };
@@ -90,6 +92,8 @@
 		CD1C82A32ADB645700F6DB50 /* Downloadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloadable.swift; sourceTree = "<group>"; };
 		CD1C82A52ADB64E200F6DB50 /* DownloadImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageManager.swift; sourceTree = "<group>"; };
 		CD1C82A72ADB7CFC00F6DB50 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
+		CD1C82B02ADC870100F6DB50 /* GFEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEmptyStateView.swift; sourceTree = "<group>"; };
+		CD1C82B52ADC8AA700F6DB50 /* ImageCacheable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageCacheable.swift; path = GithubFollower/Model/Protocol/DownloadProtocol/Interface/ImageCacheable.swift; sourceTree = SOURCE_ROOT; };
 		CD1F019A2ACBD1DF00AE88DA /* GithubFollower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubFollower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD1F019D2ACBD1DF00AE88DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD1F019F2ACBD1DF00AE88DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -209,13 +213,13 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
-		CD1C82A02ADB63E800F6DB50 /* ImageCacheProtocol */ = {
+		CD1C82A02ADB63E800F6DB50 /* DownloadProtocol */ = {
 			isa = PBXGroup;
 			children = (
 				CD1C82A22ADB642D00F6DB50 /* Implementation */,
 				CD1C82A12ADB642200F6DB50 /* Interface */,
 			);
-			path = ImageCacheProtocol;
+			path = DownloadProtocol;
 			sourceTree = "<group>";
 		};
 		CD1C82A12ADB642200F6DB50 /* Interface */ = {
@@ -271,8 +275,34 @@
 			isa = PBXGroup;
 			children = (
 				CD029E102AD0B6E5003D5FBD /* GFContainerView.swift */,
+				CD1C82B02ADC870100F6DB50 /* GFEmptyStateView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CD1C82B22ADC8A6A00F6DB50 /* ImageCacheProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				CD1C82B42ADC8A8400F6DB50 /* Implementation */,
+				CD1C82B32ADC8A7D00F6DB50 /* Interface */,
+			);
+			path = ImageCacheProtocol;
+			sourceTree = "<group>";
+		};
+		CD1C82B32ADC8A7D00F6DB50 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				CD1C82B52ADC8AA700F6DB50 /* ImageCacheable.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		CD1C82B42ADC8A8400F6DB50 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				CD1C82A72ADB7CFC00F6DB50 /* ImageCacheManager.swift */,
+			);
+			path = Implementation;
 			sourceTree = "<group>";
 		};
 		CD1F01912ACBD1DF00AE88DA = {
@@ -326,7 +356,8 @@
 		CD5A65F82AD2180300CFC77E /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				CD1C82A02ADB63E800F6DB50 /* ImageCacheProtocol */,
+				CD1C82B22ADC8A6A00F6DB50 /* ImageCacheProtocol */,
+				CD1C82A02ADB63E800F6DB50 /* DownloadProtocol */,
 				221EB7C12ADA242B005044AF /* ReusableProtocol */,
 				CDB3C8852AD2856F001D5D3D /* URLSessionProtocol */,
 				CDB3C8662AD23668001D5D3D /* DecodeProtocol */,
@@ -400,7 +431,6 @@
 				CD029E162AD0BC43003D5FBD /* Enum */,
 				CD2D291E2AD1269500D7B09E /* Follower.swift */,
 				CD2D29202AD127E500D7B09E /* User.swift */,
-				CD1C82A72ADB7CFC00F6DB50 /* ImageCacheManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -633,6 +663,7 @@
 				CDB3C86A2AD236C9001D5D3D /* JSONDecodable.swift in Sources */,
 				CD742FE62ACE2C48005681AD /* GFTitleLabel.swift in Sources */,
 				CD1F01B42ACBD9B700AE88DA /* FavoriteListViewController.swift in Sources */,
+				CD1C82B12ADC870100F6DB50 /* GFEmptyStateView.swift in Sources */,
 				CDB3C8612AD2199C001D5D3D /* NetworkManageable.swift in Sources */,
 				CD1F01BE2ACCE6F300AE88DA /* AssetImages.swift in Sources */,
 				CDB3C8892AD28631001D5D3D /* URLSessionable.swift in Sources */,
@@ -654,6 +685,7 @@
 				CD1C829F2ADB4B9D00F6DB50 /* UICollectionViewFlowLayout+.swift in Sources */,
 				CD2D291F2AD1269500D7B09E /* Follower.swift in Sources */,
 				CD029E112AD0B6E5003D5FBD /* GFContainerView.swift in Sources */,
+				CD1C82B62ADC8AA700F6DB50 /* ImageCacheable.swift in Sources */,
 				CD029E0D2AD01715003D5FBD /* GFAlertViewController.swift in Sources */,
 				CDB3C86F2AD23A45001D5D3D /* DecodeError.swift in Sources */,
 				221EB7C62ADA247D005044AF /* Reusable+.swift in Sources */,
