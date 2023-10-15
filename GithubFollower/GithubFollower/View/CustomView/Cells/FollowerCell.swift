@@ -37,7 +37,7 @@ extension FollowerCell {
 
 extension FollowerCell {
     private func setupAvatarImageView() {
-        guard let placeHolderImage = UIImage(named: "avatar-placeholder") else { 
+        guard let placeHolderImage = UIImage(named: AssetImages.ghAvatarPlaceHolder.localized) else { 
             return
         }
         self.avatarImageView.set(placeHolderImage: placeHolderImage)
