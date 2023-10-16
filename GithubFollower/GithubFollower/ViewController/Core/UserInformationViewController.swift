@@ -9,11 +9,14 @@ import UIKit
 
 final class UserInformationViewController: UIViewController {
     
+    var networkManager: NetworkManager
     var username: String?
     
-    init(username: String?) {
+    init(username: String?, networkManager: NetworkManager) {
+        self.networkManager = networkManager
         super.init(nibName: nil, bundle: nil)
         self.username = username
+        
     }
     
     required init?(coder: NSCoder) {
@@ -25,6 +28,19 @@ final class UserInformationViewController: UIViewController {
         
         initialSetup()
         configureDoneButton()
+        guard let username = username else { return }
+        networkManager.getUserInfo(
+            username: username
+        ) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let userData):
+                print("USER DATA ==> \(userData)")
+            case .failure(let error):
+                self.presentGFAlertOnMainThread(alertTitle: "Error!!", message: error.localizedDescription, buttonTitle: "OK.")
+            }
+        }
     }
 }
 
