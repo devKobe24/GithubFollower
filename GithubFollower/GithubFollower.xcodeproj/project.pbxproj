@@ -47,7 +47,6 @@
 		CDA25DDC2ADCBF1800D5DED5 /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA25DDB2ADCBF1800D5DED5 /* UserInformationViewController.swift */; };
 		CDB3C8612AD2199C001D5D3D /* NetworkManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8602AD2199C001D5D3D /* NetworkManageable.swift */; };
 		CDB3C8632AD21A0D001D5D3D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8622AD21A0D001D5D3D /* NetworkManager.swift */; };
-		CDB3C8652AD225F0001D5D3D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8642AD225F0001D5D3D /* Endpoint.swift */; };
 		CDB3C86A2AD236C9001D5D3D /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8692AD236C9001D5D3D /* JSONDecodable.swift */; };
 		CDB3C86C2AD238EE001D5D3D /* JSONDecodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C86B2AD238EE001D5D3D /* JSONDecodeProtocol.swift */; };
 		CDB3C86F2AD23A45001D5D3D /* DecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C86E2AD23A45001D5D3D /* DecodeError.swift */; };
@@ -119,7 +118,6 @@
 		CDA25DDB2ADCBF1800D5DED5 /* UserInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
 		CDB3C8602AD2199C001D5D3D /* NetworkManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManageable.swift; sourceTree = "<group>"; };
 		CDB3C8622AD21A0D001D5D3D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		CDB3C8642AD225F0001D5D3D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		CDB3C8692AD236C9001D5D3D /* JSONDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
 		CDB3C86B2AD238EE001D5D3D /* JSONDecodeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodeProtocol.swift; sourceTree = "<group>"; };
 		CDB3C86E2AD23A45001D5D3D /* DecodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeError.swift; sourceTree = "<group>"; };
@@ -208,7 +206,6 @@
 				CD029E0E2AD0B48B003D5FBD /* BackgroundColor.swift */,
 				CD029E122AD0B86A003D5FBD /* BorderColor.swift */,
 				CD1F01BD2ACCE6F300AE88DA /* AssetImages.swift */,
-				CDB3C8642AD225F0001D5D3D /* Endpoint.swift */,
 				CD8434802AD97982006502C0 /* Components.swift */,
 				CD8434822AD97BB6006502C0 /* QueryItem.swift */,
 				CD1C829C2ADAA9A500F6DB50 /* Section.swift */,
@@ -705,7 +702,6 @@
 				CDB3C88D2AD289B1001D5D3D /* URLSession+.swift in Sources */,
 				CD2D29212AD127E500D7B09E /* User.swift in Sources */,
 				221EB7C82ADA2D3E005044AF /* GFAvatarImageView.swift in Sources */,
-				CDB3C8652AD225F0001D5D3D /* Endpoint.swift in Sources */,
 				221EB7C42ADA245D005044AF /* Reusable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

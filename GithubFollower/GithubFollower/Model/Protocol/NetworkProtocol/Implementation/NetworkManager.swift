@@ -77,4 +77,60 @@ struct NetworkManager: NetworkManageable {
         }
         dataTask.resume()
     }
+    
+    func getUserInfo(username: String, completionHandler: @escaping (Result<User, GFError>) -> Void) {
+        
+        var components = URLComponents()
+        components.scheme = Components.githubScheme.localized
+        components.host = Components.githubHost.localized
+        components.path = "/\(Components.githubUserPath.localized)/\(username)"
+        
+        
+        guard let url = components.url else {
+            completionHandler(.failure(.invalidRequest))
+            return
+        }
+        
+        let dataTask = urlSession.dataTask(with: url) { (data, response, error) in
+            guard error == nil else {
+                completionHandler(.failure(.unableRequest))
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse else {
+                completionHandler(.failure(.invalidServer))
+                return
+            }
+            
+            let successRange = (200...299)
+            
+            if #available(iOS 16.0, *) {
+                guard successRange.contains(response.statusCode) else {
+                    Logger().error("\(response.statusCode) Error")
+                    completionHandler(.failure(.invalidResponse))
+                    return
+                }
+            } else {
+                guard successRange ~= response.statusCode else {
+                    Logger().error("\(response.statusCode) Error")
+                    completionHandler(.failure(.invalidResponse))
+                    return
+                }
+            }
+            
+            guard let data = data else {
+                completionHandler(.failure(.invalidResponse))
+                return
+            }
+            
+            do {
+                let decoder = JSONDecodeProtocol()
+                let userData = try decoder.decodeJSON(type: User.self, data: data)
+                completionHandler(.success(userData))
+            } catch {
+                completionHandler(.failure(.invalidServer))
+            }
+        }
+        dataTask.resume()
+    }
 }
