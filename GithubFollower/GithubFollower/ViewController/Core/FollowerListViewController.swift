@@ -162,7 +162,7 @@ extension FollowerListViewController: UICollectionViewDelegate {
         /// > 즉, 항상 사용자에게 모달 뷰를 해제(Dismiss)할 수 있는 명확한 방법을 제공하라는 뜻 입니다.
         /// >
         /// >  https://developer.apple.com/design/human-interface-guidelines/modality
-        let userInformationViewController = UserInformationViewController()
+        let userInformationViewController = UserInformationViewController(username: selectedFollower.login)
         let navigationController = UINavigationController(rootViewController: userInformationViewController)
         present(navigationController, animated: true)
     }
