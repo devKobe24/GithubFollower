@@ -44,6 +44,7 @@
 		CD8434812AD97982006502C0 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8434802AD97982006502C0 /* Components.swift */; };
 		CD8434832AD97BB7006502C0 /* QueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8434822AD97BB6006502C0 /* QueryItem.swift */; };
 		CD8434852AD9EFFC006502C0 /* GFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8434842AD9EFFC006502C0 /* GFError.swift */; };
+		CDA25DDC2ADCBF1800D5DED5 /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA25DDB2ADCBF1800D5DED5 /* UserInformationViewController.swift */; };
 		CDB3C8612AD2199C001D5D3D /* NetworkManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8602AD2199C001D5D3D /* NetworkManageable.swift */; };
 		CDB3C8632AD21A0D001D5D3D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8622AD21A0D001D5D3D /* NetworkManager.swift */; };
 		CDB3C8652AD225F0001D5D3D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8642AD225F0001D5D3D /* Endpoint.swift */; };
@@ -115,6 +116,7 @@
 		CD8434802AD97982006502C0 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		CD8434822AD97BB6006502C0 /* QueryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryItem.swift; sourceTree = "<group>"; };
 		CD8434842AD9EFFC006502C0 /* GFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFError.swift; sourceTree = "<group>"; };
+		CDA25DDB2ADCBF1800D5DED5 /* UserInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
 		CDB3C8602AD2199C001D5D3D /* NetworkManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManageable.swift; sourceTree = "<group>"; };
 		CDB3C8622AD21A0D001D5D3D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CDB3C8642AD225F0001D5D3D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				CD1F01B12ACBD97900AE88DA /* SearchViewController.swift */,
 				CD742FDC2ACE0F49005681AD /* FollowerListViewController.swift */,
 				CD1F01B32ACBD9B700AE88DA /* FavoriteListViewController.swift */,
+				CDA25DDB2ADCBF1800D5DED5 /* UserInformationViewController.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				CD8434812AD97982006502C0 /* Components.swift in Sources */,
 				CD8434832AD97BB7006502C0 /* QueryItem.swift in Sources */,
 				CD1F01BA2ACBE7EF00AE88DA /* GFButton.swift in Sources */,
+				CDA25DDC2ADCBF1800D5DED5 /* UserInformationViewController.swift in Sources */,
 				CDB3C8632AD21A0D001D5D3D /* NetworkManager.swift in Sources */,
 				CD1C829F2ADB4B9D00F6DB50 /* UICollectionViewFlowLayout+.swift in Sources */,
 				CD2D291F2AD1269500D7B09E /* Follower.swift in Sources */,
