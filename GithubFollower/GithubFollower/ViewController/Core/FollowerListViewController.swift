@@ -16,6 +16,7 @@ final class FollowerListViewController: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>?
     var page: Int = 1
     var hasMoreFollowers: Bool = true
+    var isSearchingUsername: Bool = false
     
     lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout().configureFlowLayout(in: view)
@@ -150,6 +151,21 @@ extension FollowerListViewController: UICollectionViewDelegate {
             getFollower(username: username, page: page)
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let items = isSearchingUsername ? filteredFollowers : followers
+        let selectedFollower = items[indexPath.item]
+        
+        // MARK: - userInformationViewController
+        /// userInformationViewController Modal
+        /// > Apple Developer HIG의 Modality의 설명 중 "Always give people an obvious way to dismiss a modal view." 이라고 명시 되어 있습니다.
+        /// > 즉, 항상 사용자에게 모달 뷰를 해제(Dismiss)할 수 있는 명확한 방법을 제공하라는 뜻 입니다.
+        /// >
+        /// >  https://developer.apple.com/design/human-interface-guidelines/modality
+        let userInformationViewController = UserInformationViewController()
+        let navigationController = UINavigationController(rootViewController: userInformationViewController)
+        present(navigationController, animated: true)
+    }
 }
 
 extension FollowerListViewController {
@@ -165,15 +181,19 @@ extension FollowerListViewController {
 
 extension FollowerListViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isSearchingUsername = false
+        
         updateData(on: self.followers)
     }
 }
 
 extension FollowerListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let filter = searchController.searchBar.text, !filter.isEmpty else {
+        guard let filter = searchController.searchBar.text, !filter.isEmpty, filter != "" else {
             return
         }
+        
+        isSearchingUsername = true
         
         filteredFollowers = followers.filter({ followers in
             followers.login.lowercased().contains(filter.lowercased())
