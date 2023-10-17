@@ -12,6 +12,7 @@ final class UserInformationViewController: UIViewController {
     let headerView: UIView = UIView()
     let githubRepoAndGistView: UIView = UIView()
     let getFollowerAndFollowingView: UIView = UIView()
+    let dateLabel: GFBodyLabel = GFBodyLabel(textAlignment: .center)
     
     var networkManager: NetworkManager
     var username: String?
@@ -44,6 +45,9 @@ final class UserInformationViewController: UIViewController {
         configureGitgistView()
         constraintsGitgistView()
         
+        configureDateLabel()
+        constraintsDateLabel()
+        
         getUsetInfo()
     }
 }
@@ -63,6 +67,7 @@ extension UserInformationViewController {
                     self.add(childViewController: GFUserInfoHeaderViewController(userData: userData), to: self.headerView)
                     self.add(childViewController: GFRepoAndGistItemViewController(userData: userData), to: self.githubRepoAndGistView)
                     self.add(childViewController: GFFollowerAndFollowingViewController(userData: userData), to: self.getFollowerAndFollowingView)
+                    self.dateLabel.text = "Github since \(userData.createdAt.convertDateToDisplayFormat())"
                 }
             case .failure(let error):
                 self.presentGFAlertOnMainThread(alertTitle: "Error!!", message: error.localizedDescription, buttonTitle: "OK.")
@@ -142,5 +147,23 @@ extension UserInformationViewController {
     
     @objc private func dimissUserInformationViewController() {
         dismiss(animated: true)
+    }
+}
+
+extension UserInformationViewController {
+    private func configureDateLabel() {
+        dateLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(dateLabel)
+    }
+    
+    private func constraintsDateLabel() {
+        let height = (view.bounds.height) - (view.bounds.height-18)
+        
+        NSLayoutConstraint.activate([
+            dateLabel.topAnchor.constraint(equalTo: getFollowerAndFollowingView.bottomAnchor, constant: padding),
+            dateLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            dateLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            dateLabel.heightAnchor.constraint(equalToConstant: height)
+        ])
     }
 }
