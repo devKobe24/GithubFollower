@@ -22,4 +22,8 @@ extension GFFollowerAndFollowingViewController {
         rightItemInfoView.set(itemInfoType: .following, withCount: userData.following)
         commonButton.set(backgorundColor: .systemGreen, title: "Get Followers")
     }
+    
+    override func didTapCommonButton() {
+        delegate?.didTapGetFollowers(for: userData)
+    }
 }
