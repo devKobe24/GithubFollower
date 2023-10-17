@@ -100,7 +100,7 @@ extension FollowerListViewController {
                 
             case .failure(let error):
                 self.presentGFAlertOnMainThread(
-                    alertTitle: "Bad Stuff Happend",
+                    alertTitle: "🤪Error🤪",
                     message: error.localizedDescription,
                     buttonTitle: "OK"
                 )
@@ -166,6 +166,9 @@ extension FollowerListViewController: UICollectionViewDelegate {
             username: selectedFollower.login,
             networkManager: self.networkManager
         )
+        
+        userInformationViewController.delegate = self
+        
         let navigationController = UINavigationController(rootViewController: userInformationViewController)
         present(navigationController, animated: true)
     }
@@ -203,5 +206,17 @@ extension FollowerListViewController: UISearchResultsUpdating {
         })
         
         updateData(on: filteredFollowers)
+    }
+}
+
+extension FollowerListViewController: FollowerListViewControllerDelegate {
+    func didRequestFollowers(for username: String) {
+        self.username = username
+        title = username
+        page = 1
+        followers.removeAll()
+        filteredFollowers.removeAll()
+        collectionView.setContentOffset(.zero, animated: true)
+        getFollower(username: username, page: page)
     }
 }
