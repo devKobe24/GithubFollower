@@ -5,4 +5,7 @@
 //  Created by Minseong Kang on 10/17/23.
 //
 
-import Foundation
+protocol UserInformationDelegate: AnyObject {
+    func didTapGithubProfile(for user: User)
+    func didTapGetFollowers(for user: User)
+}
