@@ -16,6 +16,7 @@ final class UserInformationViewController: UIViewController {
     
     var networkManager: NetworkManager
     var username: String?
+    weak var delegate: FollowerListViewControllerDelegate?
     
     let padding: CGFloat = 20
     
@@ -64,15 +65,25 @@ extension UserInformationViewController {
             switch result {
             case .success(let userData):
                 DispatchQueue.main.async {
-                    self.add(childViewController: GFUserInfoHeaderViewController(userData: userData), to: self.headerView)
-                    self.add(childViewController: GFRepoAndGistItemViewController(userData: userData), to: self.githubRepoAndGistView)
-                    self.add(childViewController: GFFollowerAndFollowingViewController(userData: userData), to: self.getFollowerAndFollowingView)
-                    self.dateLabel.text = "Github since \(userData.createdAt.convertDateToDisplayFormat())"
+                    self.configureUIElements(with: userData)
                 }
             case .failure(let error):
                 self.presentGFAlertOnMainThread(alertTitle: "Error!!", message: error.localizedDescription, buttonTitle: "OK.")
             }
         }
+    }
+    
+    private func configureUIElements(with userData: User) {
+        let repoAndGistItemViewController = GFRepoAndGistItemViewController(userData: userData)
+        repoAndGistItemViewController.delegate = self
+        
+        let followerAndFollowingViewController = GFFollowerAndFollowingViewController(userData: userData)
+        followerAndFollowingViewController.delegate = self
+        
+        self.add(childViewController: GFUserInfoHeaderViewController(userData: userData), to: self.headerView)
+        self.add(childViewController: repoAndGistItemViewController, to: self.githubRepoAndGistView)
+        self.add(childViewController: followerAndFollowingViewController, to: self.getFollowerAndFollowingView)
+        self.dateLabel.text = "Github since \(userData.createdAt.convertDateToDisplayFormat())"
     }
 }
 
@@ -165,5 +176,27 @@ extension UserInformationViewController {
             dateLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             dateLabel.heightAnchor.constraint(equalToConstant: height)
         ])
+    }
+}
+
+extension UserInformationViewController: UserInformationDelegate {
+    func didTapGithubProfile(for user: User) {
+        guard let url = URL(string: user.htmlUrl) else {
+            presentGFAlertOnMainThread(alertTitle: "유효하지 않은 URL", message: "이 URL은 유효하지 않은 URL 입니다.", buttonTitle: "OK")
+            return
+        }
+        
+        presentSafariViewController(with: url)
+    }
+    
+    func didTapGetFollowers(for user: User) {
+        guard user.followers != 0 else {
+            presentGFAlertOnMainThread(alertTitle: "팔로워가 없습니다.", message: "이 유저는 팔로워가 없습니다🥲.", buttonTitle: "OK")
+            return
+        }
+        
+        delegate?.didRequestFollowers(for: user.login)
+        
+        self.dismiss(animated: true)
     }
 }
