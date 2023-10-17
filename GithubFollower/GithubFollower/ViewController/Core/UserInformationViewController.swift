@@ -11,7 +11,7 @@ final class UserInformationViewController: UIViewController {
     
     let headerView: UIView = UIView()
     let githubRepoView: UIView = UIView()
-    let gitgistView: UIView = UIView()
+    let getFollowerView: UIView = UIView()
     
     var networkManager: NetworkManager
     var username: String?
@@ -112,20 +112,20 @@ extension UserInformationViewController {
     }
     
     private func configureGitgistView() {
-        gitgistView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(gitgistView)
+        getFollowerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(getFollowerView)
         
-        gitgistView.backgroundColor = .systemBlue
+        getFollowerView.backgroundColor = .systemBlue
     }
     
     private func constraintsGitgistView() {
         let height = (view.bounds.height) - (view.bounds.height - 140)
         
         NSLayoutConstraint.activate([
-            gitgistView.topAnchor.constraint(equalTo: githubRepoView.bottomAnchor, constant: padding),
-            gitgistView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
-            gitgistView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            gitgistView.heightAnchor.constraint(equalToConstant: height)
+            getFollowerView.topAnchor.constraint(equalTo: githubRepoView.bottomAnchor, constant: padding),
+            getFollowerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            getFollowerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            getFollowerView.heightAnchor.constraint(equalToConstant: height)
         ])
     }
     
