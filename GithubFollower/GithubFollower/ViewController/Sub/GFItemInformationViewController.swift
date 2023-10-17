@@ -7,18 +7,30 @@
 
 import UIKit
 
-final class GFItemInformationViewController: UIViewController {
+class GFItemInformationViewController: UIViewController {
     
     let stackView: UIStackView = UIStackView()
-    let reposAndGistView: GFItemInfoView = GFItemInfoView()
-    let followersAndFollowingView: GFItemInfoView = GFItemInfoView()
+    let leftItemInfoView: GFItemInfoView = GFItemInfoView()
+    let rightItemInfoView: GFItemInfoView = GFItemInfoView()
     let commonButton: GFButton = GFButton()
+    
+    var userData: User
+    
+    init(userData: User) {
+        self.userData = userData
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureBackgroundView()
         configureStackView()
+        configureCommonButton()
         
         constraintsStackView()
         constraintsCommonButton()
@@ -39,8 +51,8 @@ extension GFItemInformationViewController {
         stackView.axis = .horizontal
         stackView.distribution = .equalSpacing
         
-        stackView.addArrangedSubview(reposAndGistView)
-        stackView.addArrangedSubview(followersAndFollowingView)
+        stackView.addArrangedSubview(leftItemInfoView)
+        stackView.addArrangedSubview(rightItemInfoView)
     }
     
     private func constraintsStackView() {
@@ -50,7 +62,7 @@ extension GFItemInformationViewController {
             stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: padding),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            stackView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/2)
+            stackView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/3)
         ])
     }
     
@@ -66,7 +78,7 @@ extension GFItemInformationViewController {
             commonButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -padding),
             commonButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             commonButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            commonButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/2, constant: -16)
+            commonButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/3)
         ])
     }
 }

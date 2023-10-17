@@ -10,8 +10,8 @@ import UIKit
 final class UserInformationViewController: UIViewController {
     
     let headerView: UIView = UIView()
-    let githubRepoView: UIView = UIView()
-    let getFollowerView: UIView = UIView()
+    let githubRepoAndGistView: UIView = UIView()
+    let getFollowerAndFollowingView: UIView = UIView()
     
     var networkManager: NetworkManager
     var username: String?
@@ -60,12 +60,9 @@ extension UserInformationViewController {
             switch result {
             case .success(let userData):
                 DispatchQueue.main.async {
-                    self.add(
-                        childViewController: GFUserInfoHeaderViewController(
-                            user: userData
-                        ),
-                        to: self.headerView
-                    )
+                    self.add(childViewController: GFUserInfoHeaderViewController(userData: userData), to: self.headerView)
+                    self.add(childViewController: GFRepoAndGistItemViewController(userData: userData), to: self.githubRepoAndGistView)
+                    self.add(childViewController: GFFollowerAndFollowingViewController(userData: userData), to: self.getFollowerAndFollowingView)
                 }
             case .failure(let error):
                 self.presentGFAlertOnMainThread(alertTitle: "Error!!", message: error.localizedDescription, buttonTitle: "OK.")
@@ -94,38 +91,34 @@ extension UserInformationViewController {
     }
     
     private func configureGithubRepoView() {
-        githubRepoView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(githubRepoView)
-        
-        githubRepoView.backgroundColor = .systemPink
+        githubRepoAndGistView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(githubRepoAndGistView)
     }
     
     private func constraintsGithubRepoView() {
         let height = (view.bounds.height) - (view.bounds.height - 140)
         
         NSLayoutConstraint.activate([
-            githubRepoView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: padding),
-            githubRepoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
-            githubRepoView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            githubRepoView.heightAnchor.constraint(equalToConstant: height)
+            githubRepoAndGistView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: padding),
+            githubRepoAndGistView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            githubRepoAndGistView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            githubRepoAndGistView.heightAnchor.constraint(equalToConstant: height)
         ])
     }
     
     private func configureGitgistView() {
-        getFollowerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(getFollowerView)
-        
-        getFollowerView.backgroundColor = .systemBlue
+        getFollowerAndFollowingView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(getFollowerAndFollowingView)
     }
     
     private func constraintsGitgistView() {
         let height = (view.bounds.height) - (view.bounds.height - 140)
         
         NSLayoutConstraint.activate([
-            getFollowerView.topAnchor.constraint(equalTo: githubRepoView.bottomAnchor, constant: padding),
-            getFollowerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
-            getFollowerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            getFollowerView.heightAnchor.constraint(equalToConstant: height)
+            getFollowerAndFollowingView.topAnchor.constraint(equalTo: githubRepoAndGistView.bottomAnchor, constant: padding),
+            getFollowerAndFollowingView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            getFollowerAndFollowingView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            getFollowerAndFollowingView.heightAnchor.constraint(equalToConstant: height)
         ])
     }
     
