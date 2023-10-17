@@ -15,6 +15,7 @@ class GFItemInformationViewController: UIViewController {
     let commonButton: GFButton = GFButton()
     
     var userData: User
+    weak var delegate: UserInformationDelegate?
     
     let padding: CGFloat = 20
     
@@ -69,7 +70,11 @@ extension GFItemInformationViewController {
     private func configureCommonButton() {
         commonButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(commonButton)
+        
+        commonButton.addTarget(self, action: #selector(didTapCommonButton), for: .touchUpInside)
     }
+    
+    @objc func didTapCommonButton() {}
     
     private func constraintsCommonButton() {
         NSLayoutConstraint.activate([
