@@ -22,4 +22,8 @@ extension GFRepoAndGistItemViewController {
         rightItemInfoView.set(itemInfoType: .gists, withCount: userData.publicGists)
         commonButton.set(backgorundColor: .systemPurple, title: "Github Profile")
     }
+    
+    override func didTapCommonButton() {
+        delegate?.didTapGithubProfile(for: userData)
+    }
 }
