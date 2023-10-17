@@ -16,12 +16,12 @@ class GFUserInfoHeaderViewController: UIViewController {
     let locationLabel: GFSecondaryTitleLabel = GFSecondaryTitleLabel(fontSize: 18)
     let bioLabel: GFBodyLabel = GFBodyLabel(textAlignment: .left)
     
-    var user: User
+    var userData: User
     
     let textImagePadding: CGFloat = 12
     
-    init(user: User) {
-        self.user = user
+    init(userData: User) {
+        self.userData = userData
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -49,7 +49,7 @@ class GFUserInfoHeaderViewController: UIViewController {
 
 extension GFUserInfoHeaderViewController {
     private func configureAvatarImageView() {
-        avatarImageView.downloadImage(from: user.avatarUrl)
+        avatarImageView.downloadImage(from: userData.avatarUrl)
         
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(avatarImageView)
@@ -68,7 +68,7 @@ extension GFUserInfoHeaderViewController {
     }
     
     private func configureUsernameLabel() {
-        usernameLabel.text = user.login
+        usernameLabel.text = userData.login
         
         usernameLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(usernameLabel)
@@ -86,7 +86,7 @@ extension GFUserInfoHeaderViewController {
     }
     
     private func configureNamelabel() {
-        nameLabel.text = user.name ?? "N/A"
+        nameLabel.text = userData.name ?? "N/A"
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(nameLabel)
@@ -124,7 +124,7 @@ extension GFUserInfoHeaderViewController {
     }
     
     private func configureLocationLabel() {
-        locationLabel.text = user.location ?? "N/A"
+        locationLabel.text = userData.location ?? "N/A"
         
         locationLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(locationLabel)
@@ -143,7 +143,7 @@ extension GFUserInfoHeaderViewController {
     
     private func configureBioLabel() {
         bioLabel.numberOfLines = 3
-        bioLabel.text = user.bio ?? "N/A"
+        bioLabel.text = userData.bio ?? "N/A"
         
         bioLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(bioLabel)

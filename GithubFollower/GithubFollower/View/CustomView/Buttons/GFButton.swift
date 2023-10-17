@@ -34,3 +34,10 @@ final class GFButton: UIButton {
         translatesAutoresizingMaskIntoConstraints = false
     }
 }
+
+extension GFButton {
+    func set(backgorundColor: UIColor, title: String) {
+        self.backgroundColor = backgorundColor
+        setTitle(title, for: .normal)
+    }
+}
