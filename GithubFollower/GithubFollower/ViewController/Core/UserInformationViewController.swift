@@ -48,9 +48,6 @@ final class UserInformationViewController: UIViewController {
         configureDateLabel()
         constraintsDateLabel()
         
-        configureDateLabel()
-        constraintsDateLabel()
-        
         getUsetInfo()
     }
 }
