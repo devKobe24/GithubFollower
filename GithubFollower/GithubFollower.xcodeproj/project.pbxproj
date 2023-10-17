@@ -48,6 +48,8 @@
 		CDA25DE02ADD24B400D5DED5 /* GFUserInfoHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA25DDF2ADD24B400D5DED5 /* GFUserInfoHeaderViewController.swift */; };
 		CDA25DE22ADD265B00D5DED5 /* GFSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA25DE12ADD265B00D5DED5 /* GFSecondaryTitleLabel.swift */; };
 		CDA25DE42ADDE5E700D5DED5 /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA25DE32ADDE5E700D5DED5 /* SFSymbols.swift */; };
+		CDA25DE62ADE084900D5DED5 /* GFItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA25DE52ADE084900D5DED5 /* GFItemInfoView.swift */; };
+		CDA25DE82ADE0D5300D5DED5 /* ItemInfoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA25DE72ADE0D5300D5DED5 /* ItemInfoType.swift */; };
 		CDB3C8612AD2199C001D5D3D /* NetworkManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8602AD2199C001D5D3D /* NetworkManageable.swift */; };
 		CDB3C8632AD21A0D001D5D3D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8622AD21A0D001D5D3D /* NetworkManager.swift */; };
 		CDB3C86A2AD236C9001D5D3D /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8692AD236C9001D5D3D /* JSONDecodable.swift */; };
@@ -122,6 +124,8 @@
 		CDA25DDF2ADD24B400D5DED5 /* GFUserInfoHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFUserInfoHeaderViewController.swift; sourceTree = "<group>"; };
 		CDA25DE12ADD265B00D5DED5 /* GFSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFSecondaryTitleLabel.swift; sourceTree = "<group>"; };
 		CDA25DE32ADDE5E700D5DED5 /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
+		CDA25DE52ADE084900D5DED5 /* GFItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoView.swift; sourceTree = "<group>"; };
+		CDA25DE72ADE0D5300D5DED5 /* ItemInfoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoType.swift; sourceTree = "<group>"; };
 		CDB3C8602AD2199C001D5D3D /* NetworkManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManageable.swift; sourceTree = "<group>"; };
 		CDB3C8622AD21A0D001D5D3D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CDB3C8692AD236C9001D5D3D /* JSONDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
@@ -217,6 +221,7 @@
 				CD8434822AD97BB6006502C0 /* QueryItem.swift */,
 				CD1C829C2ADAA9A500F6DB50 /* Section.swift */,
 				CDA25DE32ADDE5E700D5DED5 /* SFSymbols.swift */,
+				CDA25DE72ADE0D5300D5DED5 /* ItemInfoType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 			children = (
 				CD029E102AD0B6E5003D5FBD /* GFContainerView.swift */,
 				CD1C82B02ADC870100F6DB50 /* GFEmptyStateView.swift */,
+				CDA25DE52ADE084900D5DED5 /* GFItemInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -678,6 +684,7 @@
 				CDA25DE22ADD265B00D5DED5 /* GFSecondaryTitleLabel.swift in Sources */,
 				CDB3C8892AD28631001D5D3D /* URLSessionable.swift in Sources */,
 				221EB7C02ADA2390005044AF /* FollowerCell.swift in Sources */,
+				CDA25DE82ADE0D5300D5DED5 /* ItemInfoType.swift in Sources */,
 				CD1C82A82ADB7CFC00F6DB50 /* ImageCacheManager.swift in Sources */,
 				CD1F01B62ACBDBD300AE88DA /* UINavigationController+.swift in Sources */,
 				CD1C82A62ADB64E200F6DB50 /* DownloadImageManager.swift in Sources */,
@@ -702,6 +709,7 @@
 				221EB7C62ADA247D005044AF /* Reusable+.swift in Sources */,
 				CD1C829D2ADAA9A500F6DB50 /* Section.swift in Sources */,
 				CD029E132AD0B86A003D5FBD /* BorderColor.swift in Sources */,
+				CDA25DE62ADE084900D5DED5 /* GFItemInfoView.swift in Sources */,
 				CD1F019E2ACBD1DF00AE88DA /* AppDelegate.swift in Sources */,
 				CDB3C88E2AD28AB4001D5D3D /* StubURLSession.swift in Sources */,
 				CD1F01A02ACBD1DF00AE88DA /* SceneDelegate.swift in Sources */,
