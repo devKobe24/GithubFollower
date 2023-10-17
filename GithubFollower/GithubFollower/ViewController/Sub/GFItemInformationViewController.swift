@@ -16,6 +16,8 @@ class GFItemInformationViewController: UIViewController {
     
     var userData: User
     
+    let padding: CGFloat = 20
+    
     init(userData: User) {
         self.userData = userData
         super.init(nibName: nil, bundle: nil)
@@ -56,8 +58,6 @@ extension GFItemInformationViewController {
     }
     
     private func constraintsStackView() {
-        let padding: CGFloat = 20
-        
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: padding),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
@@ -72,8 +72,6 @@ extension GFItemInformationViewController {
     }
     
     private func constraintsCommonButton() {
-        let padding: CGFloat = 20
-        
         NSLayoutConstraint.activate([
             commonButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -padding),
             commonButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
