@@ -53,6 +53,8 @@
 		CDA25DEA2ADE130F00D5DED5 /* GFItemInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA25DE92ADE130F00D5DED5 /* GFItemInformationViewController.swift */; };
 		CDA25DEC2ADE20FE00D5DED5 /* GFRepoAndGistItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA25DEB2ADE20FE00D5DED5 /* GFRepoAndGistItemViewController.swift */; };
 		CDA25DEE2ADE24CC00D5DED5 /* GFFollowerAndFollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA25DED2ADE24CC00D5DED5 /* GFFollowerAndFollowingViewController.swift */; };
+		CDA25DF02ADE33DA00D5DED5 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA25DEF2ADE33DA00D5DED5 /* Date+.swift */; };
+		CDA25DF22ADE342100D5DED5 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA25DF12ADE342100D5DED5 /* String+.swift */; };
 		CDB3C8612AD2199C001D5D3D /* NetworkManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8602AD2199C001D5D3D /* NetworkManageable.swift */; };
 		CDB3C8632AD21A0D001D5D3D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8622AD21A0D001D5D3D /* NetworkManager.swift */; };
 		CDB3C86A2AD236C9001D5D3D /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8692AD236C9001D5D3D /* JSONDecodable.swift */; };
@@ -132,6 +134,8 @@
 		CDA25DE92ADE130F00D5DED5 /* GFItemInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInformationViewController.swift; sourceTree = "<group>"; };
 		CDA25DEB2ADE20FE00D5DED5 /* GFRepoAndGistItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFRepoAndGistItemViewController.swift; sourceTree = "<group>"; };
 		CDA25DED2ADE24CC00D5DED5 /* GFFollowerAndFollowingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFFollowerAndFollowingViewController.swift; sourceTree = "<group>"; };
+		CDA25DEF2ADE33DA00D5DED5 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		CDA25DF12ADE342100D5DED5 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		CDB3C8602AD2199C001D5D3D /* NetworkManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManageable.swift; sourceTree = "<group>"; };
 		CDB3C8622AD21A0D001D5D3D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CDB3C8692AD236C9001D5D3D /* JSONDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
@@ -425,6 +429,8 @@
 				CDB3C88C2AD289B1001D5D3D /* URLSession+.swift */,
 				221EB7C52ADA247D005044AF /* Reusable+.swift */,
 				CD1C829E2ADB4B9D00F6DB50 /* UICollectionViewFlowLayout+.swift */,
+				CDA25DEF2ADE33DA00D5DED5 /* Date+.swift */,
+				CDA25DF12ADE342100D5DED5 /* String+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -693,6 +699,7 @@
 				CDA25DEC2ADE20FE00D5DED5 /* GFRepoAndGistItemViewController.swift in Sources */,
 				CD1F01BE2ACCE6F300AE88DA /* AssetImages.swift in Sources */,
 				CDA25DE22ADD265B00D5DED5 /* GFSecondaryTitleLabel.swift in Sources */,
+				CDA25DF22ADE342100D5DED5 /* String+.swift in Sources */,
 				CDB3C8892AD28631001D5D3D /* URLSessionable.swift in Sources */,
 				221EB7C02ADA2390005044AF /* FollowerCell.swift in Sources */,
 				CDA25DE82ADE0D5300D5DED5 /* ItemInfoType.swift in Sources */,
@@ -718,6 +725,7 @@
 				CD1C82B62ADC8AA700F6DB50 /* ImageCacheable.swift in Sources */,
 				CD029E0D2AD01715003D5FBD /* GFAlertViewController.swift in Sources */,
 				CDB3C86F2AD23A45001D5D3D /* DecodeError.swift in Sources */,
+				CDA25DF02ADE33DA00D5DED5 /* Date+.swift in Sources */,
 				221EB7C62ADA247D005044AF /* Reusable+.swift in Sources */,
 				CD1C829D2ADAA9A500F6DB50 /* Section.swift in Sources */,
 				CD029E132AD0B86A003D5FBD /* BorderColor.swift in Sources */,
