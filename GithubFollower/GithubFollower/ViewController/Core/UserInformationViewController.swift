@@ -44,7 +44,14 @@ final class UserInformationViewController: UIViewController {
         configureGitgistView()
         constraintsGitgistView()
         
-        guard let username = username else { return }
+        getUsetInfo()
+    }
+}
+
+extension UserInformationViewController {
+    private func getUsetInfo() {
+        guard let username = self.username else { return }
+        
         networkManager.getUserInfo(
             username: username
         ) { [weak self] result in
@@ -80,8 +87,8 @@ extension UserInformationViewController {
         
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             headerView.heightAnchor.constraint(equalToConstant: height)
         ])
     }
