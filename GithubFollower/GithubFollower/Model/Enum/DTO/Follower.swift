@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct Follower: Decodable, Hashable {
-    var uuid: UUID = UUID()
+struct Follower: Codable, Hashable {
     var login: String
     var avatarUrl: String
     
