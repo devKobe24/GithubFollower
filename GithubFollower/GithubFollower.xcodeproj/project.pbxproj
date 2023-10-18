@@ -57,6 +57,9 @@
 		CDA25DF22ADE342100D5DED5 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA25DF12ADE342100D5DED5 /* String+.swift */; };
 		CDA25DF62ADE47C200D5DED5 /* UserInformationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA25DF52ADE47C200D5DED5 /* UserInformationDelegate.swift */; };
 		CDA25DFA2ADE54EB00D5DED5 /* FollowerListViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA25DF92ADE54EB00D5DED5 /* FollowerListViewControllerDelegate.swift */; };
+		CDA25E012ADF2D7700D5DED5 /* PersistenceManagerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA25E002ADF2D7700D5DED5 /* PersistenceManagerable.swift */; };
+		CDA25E032ADF2DF900D5DED5 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA25E022ADF2DF900D5DED5 /* PersistenceManager.swift */; };
+		CDA25E062ADF2E9000D5DED5 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA25E052ADF2E9000D5DED5 /* Keys.swift */; };
 		CDB3C8612AD2199C001D5D3D /* NetworkManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8602AD2199C001D5D3D /* NetworkManageable.swift */; };
 		CDB3C8632AD21A0D001D5D3D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8622AD21A0D001D5D3D /* NetworkManager.swift */; };
 		CDB3C86A2AD236C9001D5D3D /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3C8692AD236C9001D5D3D /* JSONDecodable.swift */; };
@@ -140,6 +143,9 @@
 		CDA25DF12ADE342100D5DED5 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		CDA25DF52ADE47C200D5DED5 /* UserInformationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationDelegate.swift; sourceTree = "<group>"; };
 		CDA25DF92ADE54EB00D5DED5 /* FollowerListViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListViewControllerDelegate.swift; sourceTree = "<group>"; };
+		CDA25E002ADF2D7700D5DED5 /* PersistenceManagerable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManagerable.swift; sourceTree = "<group>"; };
+		CDA25E022ADF2DF900D5DED5 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		CDA25E052ADF2E9000D5DED5 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		CDB3C8602AD2199C001D5D3D /* NetworkManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManageable.swift; sourceTree = "<group>"; };
 		CDB3C8622AD21A0D001D5D3D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CDB3C8692AD236C9001D5D3D /* JSONDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
@@ -231,6 +237,7 @@
 		CD029E162AD0BC43003D5FBD /* Enum */ = {
 			isa = PBXGroup;
 			children = (
+				CDA25E042ADF2E5E00D5DED5 /* DTO */,
 				CD029E0E2AD0B48B003D5FBD /* BackgroundColor.swift */,
 				CD029E122AD0B86A003D5FBD /* BorderColor.swift */,
 				CD1F01BD2ACCE6F300AE88DA /* AssetImages.swift */,
@@ -239,6 +246,7 @@
 				CD1C829C2ADAA9A500F6DB50 /* Section.swift */,
 				CDA25DE32ADDE5E700D5DED5 /* SFSymbols.swift */,
 				CDA25DE72ADE0D5300D5DED5 /* ItemInfoType.swift */,
+				CDA25E052ADF2E9000D5DED5 /* Keys.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -388,6 +396,7 @@
 		CD5A65F82AD2180300CFC77E /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				CDA25DFD2ADF2D1A00D5DED5 /* PersistenceManagerProtocol */,
 				CDA25DF72ADE549E00D5DED5 /* FollowerListDelegateProtocol */,
 				CDA25DF32ADE478000D5DED5 /* UserInformationDelegateProtocol */,
 				CD1C82B22ADC8A6A00F6DB50 /* ImageCacheProtocol */,
@@ -465,8 +474,6 @@
 				CDB3C86D2AD239FA001D5D3D /* Error */,
 				CD5A65F82AD2180300CFC77E /* Protocol */,
 				CD029E162AD0BC43003D5FBD /* Enum */,
-				CD2D291E2AD1269500D7B09E /* Follower.swift */,
-				CD2D29202AD127E500D7B09E /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -510,6 +517,40 @@
 				CDA25DF92ADE54EB00D5DED5 /* FollowerListViewControllerDelegate.swift */,
 			);
 			path = Interface;
+			sourceTree = "<group>";
+		};
+		CDA25DFD2ADF2D1A00D5DED5 /* PersistenceManagerProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				CDA25DFF2ADF2D3B00D5DED5 /* Implement */,
+				CDA25DFE2ADF2D3100D5DED5 /* Interface */,
+			);
+			path = PersistenceManagerProtocol;
+			sourceTree = "<group>";
+		};
+		CDA25DFE2ADF2D3100D5DED5 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				CDA25E002ADF2D7700D5DED5 /* PersistenceManagerable.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		CDA25DFF2ADF2D3B00D5DED5 /* Implement */ = {
+			isa = PBXGroup;
+			children = (
+				CDA25E022ADF2DF900D5DED5 /* PersistenceManager.swift */,
+			);
+			path = Implement;
+			sourceTree = "<group>";
+		};
+		CDA25E042ADF2E5E00D5DED5 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				CD2D29202AD127E500D7B09E /* User.swift */,
+				CD2D291E2AD1269500D7B09E /* Follower.swift */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 		CDB3C8662AD23668001D5D3D /* DecodeProtocol */ = {
@@ -750,6 +791,7 @@
 				CD029E0F2AD0B48B003D5FBD /* BackgroundColor.swift in Sources */,
 				CD1F01B22ACBD97900AE88DA /* SearchViewController.swift in Sources */,
 				CDB3C86C2AD238EE001D5D3D /* JSONDecodeProtocol.swift in Sources */,
+				CDA25E062ADF2E9000D5DED5 /* Keys.swift in Sources */,
 				CD8434852AD9EFFC006502C0 /* GFError.swift in Sources */,
 				CD742FDF2ACE1D9F005681AD /* UINavigationBar+.swift in Sources */,
 				CD8434812AD97982006502C0 /* Components.swift in Sources */,
@@ -772,11 +814,13 @@
 				CD1F019E2ACBD1DF00AE88DA /* AppDelegate.swift in Sources */,
 				CDB3C88E2AD28AB4001D5D3D /* StubURLSession.swift in Sources */,
 				CD1F01A02ACBD1DF00AE88DA /* SceneDelegate.swift in Sources */,
+				CDA25E012ADF2D7700D5DED5 /* PersistenceManagerable.swift in Sources */,
 				CDA25DFA2ADE54EB00D5DED5 /* FollowerListViewControllerDelegate.swift in Sources */,
 				CDA25DE42ADDE5E700D5DED5 /* SFSymbols.swift in Sources */,
 				CD1F01B82ACBDE9700AE88DA /* UITabBarController+.swift in Sources */,
 				CD029E182AD0C485003D5FBD /* UIViewController+.swift in Sources */,
 				CD1C82A42ADB645700F6DB50 /* Downloadable.swift in Sources */,
+				CDA25E032ADF2DF900D5DED5 /* PersistenceManager.swift in Sources */,
 				CD029E152AD0BBC5003D5FBD /* AlertErrorMessage.swift in Sources */,
 				CDB3C88D2AD289B1001D5D3D /* URLSession+.swift in Sources */,
 				CD2D29212AD127E500D7B09E /* User.swift in Sources */,

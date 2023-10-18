@@ -11,6 +11,8 @@ enum GFError: LocalizedError {
     case unableRequest
     case invalidResponse
     case invalidServer
+    case unableToFavorite
+    case alreadyInFavorite
     
     var errorDescription: String? {
         switch self {
@@ -22,6 +24,10 @@ enum GFError: LocalizedError {
             return "서버로부터의 유효하지 않은 응답입니다. 다시 시도해 주세요."
         case .invalidServer:
             return "서버로부터 유효하지 않은 데이터를 전달받았습니다. 다시 시도해 주세요."
+        case .unableToFavorite:
+            return "이 유저를 추가할 수 없습니다. 다시 시도해 주세요."
+        case .alreadyInFavorite:
+            return "이 유저는 이미 추가 되어있습니다."
         }
     }
 }

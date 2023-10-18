@@ -65,6 +65,40 @@ extension FollowerListViewController {
     private func initialSetup() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAddButton))
+        navigationItem.rightBarButtonItem = addButton
+    }
+    
+    @objc private func didTapAddButton() {
+        showLoadingView { [weak self] activityIndicator, containerView in
+            guard let self = self else { return }
+            self.networkManager.getUserInfo(username: username) { [weak self] result in
+                guard let self = self else { return }
+                
+                DispatchQueue.main.async {
+                    activityIndicator.stopAnimating()
+                    containerView.removeFromSuperview()
+                }
+                
+                switch result {
+                case .success(let user):
+                    let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
+                    
+                    PersistenceManager().update(favorite: favorite) { [weak self] error in
+                        guard let self = self else { return }
+                        
+                        guard let error = error else {
+                            self.presentGFAlertOnMainThread(alertTitle: "😍추가되었습니다.😍", message: "🎉유저가 즐겨찾기에 추가되었습니다🎉", buttonTitle: "OK")
+                            return
+                        }
+                        self.presentGFAlertOnMainThread(alertTitle: "ERROR😢", message: error.localizedDescription, buttonTitle: "OK")
+                        
+                    }
+                case .failure(let error):
+                    self.presentGFAlertOnMainThread(alertTitle: "🥲Error!!", message: error.localizedDescription, buttonTitle: "OK.")
+                }
+            }
+        }
     }
     
     private func configureCollectionView() {
@@ -73,39 +107,44 @@ extension FollowerListViewController {
     }
 
     private func getFollower(username: String, page: Int) {
-        let containerView = showLoadingView()
-        networkManager.getFollower(
-            username: username,
-            perPage: 100,
-            page: page
-        ) { [weak self] result in
+        showLoadingView { [weak self] activityIndicator, containerView in
             guard let self = self else { return }
-            
-            self.dismissLoadingView(containerView: containerView)
-            switch result {
-            case .success(let followers):
-                if followers.count < 100 {
-                    self.hasMoreFollowers = false
+            self.networkManager.getFollower(
+                username: username,
+                perPage: 100,
+                page: page
+            ) { [weak self] result in
+                guard let self = self else { return }
+                DispatchQueue.main.async {
+                    activityIndicator.stopAnimating()
+                    containerView.removeFromSuperview()
                 }
-                self.followers.append(contentsOf: followers)
-                
-                if self.followers.isEmpty {
-                    let message = "이 유저는 팔로워가 없습니다.\n어서 팔로우 하세요 😉"
-                    DispatchQueue.main.async {
-                        self.showEmptyStateView(with: message, in: self.view)
+                switch result {
+                case .success(let followers):
+                    if followers.count < 100 {
+                        self.hasMoreFollowers = false
                     }
-                    return
+                    self.followers.append(contentsOf: followers)
+                    
+                    if self.followers.isEmpty {
+                        let message = "이 유저는 팔로워가 없습니다.\n어서 팔로우 하세요 😉"
+                        DispatchQueue.main.async {
+                            self.showEmptyStateView(with: message, in: self.view)
+                        }
+                        return
+                    }
+                    self.updateData(on: self.followers)
+                    
+                case .failure(let error):
+                    self.presentGFAlertOnMainThread(
+                        alertTitle: "🤪Error🤪",
+                        message: error.localizedDescription,
+                        buttonTitle: "OK"
+                    )
                 }
-                self.updateData(on: self.followers)
-                
-            case .failure(let error):
-                self.presentGFAlertOnMainThread(
-                    alertTitle: "🤪Error🤪",
-                    message: error.localizedDescription,
-                    buttonTitle: "OK"
-                )
             }
         }
+
     }
     
     private func configureDataSource() {
