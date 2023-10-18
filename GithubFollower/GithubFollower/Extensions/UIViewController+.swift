@@ -21,12 +21,16 @@ extension UIViewController {
         }
     }
     
-    func showLoadingView() -> UIView {
+    func showLoadingView(completion: @escaping ((UIActivityIndicatorView, UIView) -> Void)) {
         let containerView = UIView(frame: view.bounds)
         view.addSubview(containerView)
         
         containerView.backgroundColor = .systemBackground
         containerView.alpha = 0
+        
+        UIView.animate(withDuration: 0.25) {
+            containerView.alpha = 0.8
+        }
         
         let activityIndicator = UIActivityIndicatorView(style: .large)
         containerView.addSubview(activityIndicator)
@@ -39,15 +43,7 @@ extension UIViewController {
         ])
         
         activityIndicator.startAnimating()
-        containerView.alpha = 0.8
-        
-        return containerView
-    }
-    
-    func dismissLoadingView(containerView: UIView) {
-        DispatchQueue.main.async {
-            containerView.removeFromSuperview()
-        }
+        completion(activityIndicator, containerView)
     }
     
     func showEmptyStateView(with message: String, in view: UIView) {
