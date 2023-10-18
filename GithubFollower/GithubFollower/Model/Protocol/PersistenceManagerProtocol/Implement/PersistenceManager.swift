@@ -66,6 +66,7 @@ struct PersistenceManager: PersistenceManagerable {
                 retrieveFavorites.removeAll {
                     $0.login == favorite.login
                 }
+                completion(save(favorites: retrieveFavorites))
             case .failure(let error):
                 completion(error)
             }
